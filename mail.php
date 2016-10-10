@@ -18,6 +18,10 @@
     } else {
           echo "Message sent!";
     }      
+<<<<<<< HEAD
     // header('location: /#contact');
+=======
+    header('location: /#contact');
+>>>>>>> 6a5eea6cdf5be6518d8a4bab2ddbd4eabd479063
 
 ?>
