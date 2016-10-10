@@ -1,0 +1,180 @@
+<section id="projects">
+	<div class="project">
+		<div class="project-thumbnail">
+			<img class="preview" src="../compass/images/hydrosource.png">
+			<img class="preview" src="../compass/images/hydrosource1.png">
+			<img class="preview" src="../compass/images/hydrosource2.png">
+		</div>
+
+		<div class="project-info">
+			<div class="info-title">
+				<h2>HydroSource</h2>
+				<span>eCommerce Website | MVC Single Page Application | MEAN stack</span>
+			</div>
+
+			<div class="info-tech">
+				<span class="tech-tag lng">HTML5</span>
+				<span class="tech-tag lng">CSS</span>
+				<span class="tech-tag ext">Compass/SASS</span>
+				<span class="tech-tag frm">BootStrap</span>
+				<span class="tech-tag ext">UI Bootstrap</span>
+				<span class="tech-tag lng">JavaScript</span>
+				<span class="tech-tag frm">Angular.js</span>
+				<span class="tech-tag frm">Node.js</span>
+				<span class="tech-tag frm">Express.js</span>
+				<span class="tech-tag db">MongoDB/Mongoose</span>
+			</div>
+
+			<div class="info-detail">
+				<p>HydroSource is an eCommerce website for a (fake) water subscription service. A unique feature is Water Intake Calculator, which takes a user's body weight and hydration level of choice, and calculates the ideal amount of daily water intake. Based on the daily intake and delivery frequency of choice, total water supply for each delivery is determined. It is displayed in Store and Cart on a progress bar, to aid a uer's shopping experience.</p>
+					
+				<h3>What I learned</h3>
+
+				<div class="summary">
+					<p><span class="subtitle">bcrypt (npm)</span>To avoid potential security risks, it is a common practice to have a user's password hashed before saving it in a database. I learned the basic concept of bcrypt, nad how to read a shadow password (prefix for bcrpy hash, cost parameter, salt and hash). I used a Node.js library to initially hash a password and to verify a password given at sign in. <br/></p>
+				</div>
+				<div class="summary">
+					<p><span class="subtitle">rand-token (npm)</span>Another Node.JS library that I utilized in developing HydroSource. A random token is generated when a user signs in, and is removed at sign out.<br/></p>
+				</div>
+				<div class="summary">
+					<p><span class="subtitle">Authentification Cookies</span>As a user, sign in/out status used to feel as if it was a distinct state, like on and off. While implementing it, I realized it was rather a set of actions that is initiated by one time verification of username and password, followed by creation of a token, which is used for repeated verifications on every page access (or route change, to be precise). Use of cookies is essential in the process, for it allows a token to be stored and be accessible throughout the website.<br/>
+					Although it was technically simple implementation, it was intriguing to experience a change in the concept of sign in/out - a perspective shift from a user to a developer's side.</p>
+				</div>
+				<div class="summary">
+					<p><span class="subtitle">Stripe (API)</span>Stripe is an online payment software platform. By using the Stripe API that has NodeJS specific library, I can process payments safely without dealing with a user's sensitive information. </p>
+				</div>	
+
+				<h3>Problems Encountered and Solved</h3>
+
+				<div class="summary">
+					<p><span class="subtitle">Use of ng-show/ng-hide in navigation menu items</span>It was an architectural problem in using Angular routing. I used ng-show/ng-hide to display or hide menu items (in index.html) depending on sign in/out status. The problem was that they were evaluated only once at an initial page load. Whether a user signs in or not after the initial loading, because it is routing between different views not reloading the page, ng-show/ng-hide on menu items were not being updated. To solve the problem, I added a run block <code>.run()</code> with <code>$rootScope</code> and <code>$location </code>: a global variable <code>$rootScope.loggedIn</code> is used to determine sign in/out status, shared by all controllers,<code> and $locationChangeStart</code> monitors route change.</p>
+				</div>
+				<div class="summary">
+					<p><span class="subtitle">Updating account information and re-rendering the page simultaneously</span>It was an architectural problem in using Angular routing. I used ng-show/ng-hide to display or hide menu items (in index.html) depending on sign in/out status. The problem was that they were evaluated only once at an initial page load. Whether a user signs in or not after the initial loading, because it is routing between different views not reloading the page, ng-show/ng-hide on menu items were not being updated. To solve the problem, I added a run block <code>.run()</code> with <code>$rootScope</code> and <code>$location </code>: a global variable <code>$rootScope.loggedIn</code> is used to determine sign in/out status, shared by all controllers,<code> and $locationChangeStart</code> monitors route change.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="project">
+		<div class="project-thumbnail">
+			<img src="http://placehold.it/250x210">
+		</div>
+		<div class="project-info">
+			<div class="info-title">
+				<h2>Marti's Study Room</h2>
+				<span>Korean Vocaburary Study Web App | MVC Single Page Application | MEAN stack</span>
+			</div>
+			<div class="info-tech">
+				<span class="tech-tag lng">HTML5</span>
+				<span class="tech-tag lng">CSS</span>
+				<span class="tech-tag lng">JavaScript</span>
+				<span class="tech-tag frm">Angular.js</span>
+				<span class="tech-tag frm">Node.js</span>
+				<span class="tech-tag frm">Express.js</span>
+				<span class="tech-tag db">MongoDB/Mongoose</span>
+			</div>
+
+			<div class="info-detail">
+				<p>Marti's Study Room is an web application created for my friend, Marti, whom I teach Korean, to aid her vocaburary memorization. I used to send her emails with a quiz file attached and wanted to automate this process to save time. With the app, Marti can take a quiz whenver she wants, and I can track her progress. </p>
+					
+				<h3>What I learned</h3>
+
+				<div class="summary">
+					<p><span class="subtitle">bcrypt (npm)</span>To avoid potential security risks, it is a common practice to have a user's password hashed before saving it in a database. I learned the basic concept of bcrypt, nad how to read a shadow password (prefix for bcrpy hash, cost parameter, salt and hash). I used a Node.js library to initially hash a password and to verify a password given at sign in. <br/></p>
+				</div>
+
+				<h3>Problems Encountered and Solved</h3>
+
+				<div class="summary">
+					<p><span class="subtitle">Logic for generating quiz problems and answer options</span>It was an architectural problem in using Angular routing. I used ng-show/ng-hide to display or hide menu items (in index.html) depending on sign in/out status. The problem was that they were evaluated only once at an initial page load. Whether a user signs in or not after the initial loading, because it is routing between different views not reloading the page, ng-show/ng-hide on menu items were not being updated. To solve the problem, I added a run block <code>.run()</code> with <code>$rootScope</code> (for a global variable <code>$rootScope.loggedIn</code>, shared among the controllers) and <code>$location </code>(<code>$locationChangeStart</code>, to monitor route change ).</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="project">
+		<div class="project-thumbnail">
+			<img src="http://placehold.it/250x210">
+		</div>
+		<div class="project-info">
+			<div class="info-title">
+				<h2>Find Your Festival</h2>
+				<span>One-stop Search Web App for music festivals | MVC Single Page Application</span>
+			</div>
+			<div class="info-tech">
+				<span class="tech-tag lng">HTML5</span>
+				<span class="tech-tag lng">CSS</span>
+				<span class="tech-tag lng">JavaScript</span>
+				<span class="tech-tag frm">Angular.js</span>
+				<span class="tech-tag frm">Node.js</span>
+				<span class="tech-tag frm">Express.js</span>
+				<span class="tech-tag db">MongoDB/Mongoose</span>
+			</div>
+
+			<div class="info-detail">
+				<p>Find Your Festival is an one-stop solution for festival-goers who want to decide which music festival(s) to attend. A user provides search criteria and Find Your Festival returns matches with extimated cost, or even a complete itinerary. It also comes with options to buy a ticket and book a flight or a hotel.</p>
+					
+				<h3>What I learned</h3>
+
+				<div class="summary">
+					<p><span class="subtitle">TicketMaster (API)</span>Nulla placerat venenatis purus, eget malesuada neque pharetra nec. Cras ut quam vel sem elementum eleifend. Cras porta quam eu massa blandit, sit amet vulputate augue blandit. Etiam fringilla sed nisi at bibendum. Sed commodo commodo arcu id vulputate. Aenean eget sodales quam.<br/></p>
+				</div>
+				<div class="summary">
+					<p><span class="subtitle">Google Map (API)</span>Nulla placerat venenatis purus, eget malesuada neque pharetra nec. Cras ut quam vel sem elementum eleifend. Cras porta quam eu massa blandit, sit amet vulputate augue blandit. Etiam fringilla sed nisi at bibendum. Sed commodo commodo arcu id vulputate. Aenean eget sodales quam.<br/></p>
+				</div>
+				<div class="summary">
+					<p><span class="subtitle">Open Weather (API)</span>Nulla placerat venenatis purus, eget malesuada neque pharetra nec. Cras ut quam vel sem elementum eleifend. Cras porta quam eu massa blandit, sit amet vulputate augue blandit. Etiam fringilla sed nisi at bibendum. Sed commodo commodo arcu id vulputate. Aenean eget sodales quam.<br/></p>
+				</div>
+
+				<h3>Problems Encountered and Solved</h3>
+
+				<div class="summary">
+					<p><span class="subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit</span>Donec ut turpis et nunc ultricies mollis non sed mi. Nulla eget velit gravida, bibendum nulla eget, feugiat dui. Etiam volutpat enim est, et tempor nulla facilisis id. Mauris fermentum in nisl nec interdum. Sed urna tellus, hendrerit ac bibendum ut, maximus ac risus. Duis mattis aliquam ante, at fermentum urna molestie quis. Pellentesque facilisis ante quis odio posuere, vitae condimentum leo commodo. In leo quam, ultricies eget metus at, tincidunt auctor elit. Nam eu nisl nec tellus pellentesque imperdiet. Cras ultrices tortor sed erat condimentum venenatis. Suspendisse dui nulla, ultrices eu risus id, rhoncus laoreet nisl. Morbi quis metus urna. Nam nec ex vulputate, consequat ante luctus, dapibus augue.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="project">
+		<div class="project-thumbnail">
+			<img src="http://placehold.it/250x210">
+		</div>
+		<div class="project-info">
+			<div class="info-title">
+				<h2>BuZz For Bees</h2>
+				<span>Twitter-formatted Website | Python with Flask, Jinja2 | MySQL </span>
+			</div>
+			<div class="info-tech">
+				<span class="tech-tag lng">HTML5</span>
+				<span class="tech-tag lng">CSS</span>
+				<span class="tech-tag ext">Compass/SASS</span>
+				<span class="tech-tag frm">BootStrap</span>
+				<span class="tech-tag lng">JavaScript</span>
+				<span class="tech-tag ext">jQuery</span>
+				<span class="tech-tag ext">Jinja 2</span>
+				<span class="tech-tag lng">Python</span>
+				<span class="tech-tag frm">Flask</span>
+				<span class="tech-tag db">MySQL/Sequel Pro</span>
+			</div>
+
+			<div class="info-detail">
+				<p>BuZzer For Bees is a Twitter clone, for people who support saving bees.</p>
+					
+				<h3>What I learned</h3>
+
+				<div class="summary">
+					<p><span class="subtitle">jsonify/json.dumps</span>Donec aliquet posuere ipsum, non eleifend nisl pulvinar vitae. Quisque ut urna quis ante hendrerit efficitur quis ut nisl. Nam viverra nulla vel mollis finibus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse aliquam odio mi, a blandit nunc ultricies commodo. Curabitur sed dapibus libero. Ut metus ante, sagittis ac placerat eu, laoreet ut orci. Morbi ac felis at lacus viverra mollis. Ut quis nibh ac quam tristique molestie. <br/></p>
+				</div>
+
+				<h3>Problems Encountered and Solved</h3>
+
+				<div class="summary">
+					<p><span class="subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit</span>Donec ut turpis et nunc ultricies mollis non sed mi. Nulla eget velit gravida, bibendum nulla eget, feugiat dui. Etiam volutpat enim est, et tempor nulla facilisis id. Mauris fermentum in nisl nec interdum. Sed urna tellus, hendrerit ac bibendum ut, maximus ac risus. Duis mattis aliquam ante, at fermentum urna molestie quis. Pellentesque facilisis ante quis odio posuere, vitae condimentum leo commodo. In leo quam, ultricies eget metus at, tincidunt auctor elit. Nam eu nisl nec tellus pellentesque imperdiet. Cras ultrices tortor sed erat condimentum venenatis. Suspendisse dui nulla, ultrices eu risus id, rhoncus laoreet nisl. Morbi quis metus urna. Nam nec ex vulputate, consequat ante luctus, dapibus augue.
+
+</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+</section>	

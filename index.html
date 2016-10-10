@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html ng-app="alxApp">
+<head>
+	<meta name="viewport" content="width=device-width">
+	<title>Alex Hwang: Full-stack Web Developer</title>
+	
+	<link href="https://fonts.googleapis.com/css?family=Montserrat|Poppins|Spinnaker|Armata|Open+Sans:300,400,600|Lato|Quicksand|Bungee+Shade" rel="stylesheet">
+	<link rel="stylesheet" href="compass/css/flexboxgrid.min.css" type="text/css">
+	<link rel="stylesheet" href="compass/css/styles.css">
+
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+	<script type="text/javascript" src="https://code.angularjs.org/1.5.8/angular-route.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-scroll/1.0.0/angular-scroll.min.js"></script>
+	<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+	<script type="text/javascript" src="scripts.js"></script>
+	<script type="text/javascript" src="ctrls/projects.js"></script>
+	<script type="text/javascript" src="ctrls/skills.js"></script>
+	<script type="text/javascript" src="ctrls/about.js"></script>
+
+</head>
+
+<body ng-controller="alxCtrl">
+<header>
+	<div id="inner-header" class="col-sm-10 col-sm-offset-1">
+		<div id="title">
+			<span id="alex">Alex Hwang</span>
+			<span id="dev"> Full-stack Web Developer</span>
+		</div>
+		<div id="menu-wrapper">
+			<nav>
+				<ul>
+					<li class="active" id="li-first"><a href="#/">PROJECTS</a></li>
+					<li ><a href="#/skills">SKILLS</a></li>
+					<li><a href="#/about">ABOUT</a></li>
+				</ul>
+			</nav>
+		</div>
+		<!-- End for menu-wrapper -->
+		<div id="links">
+			<div class="link-item">
+				<a href="https://www.linkedin.com/in/yalexhwang"><img class="social" src="../compass/images/linkedin.jpg"></a>
+			</div>
+			<div class="link-item">
+				<a href="http://github.com/yalexhwang"><img class="social" src="../compass/images/github.png"></a>
+			</div>
+		</div>
+	</div>
+</header>
+
+<div id="main">
+	<div id="inner-main" class="col-sm-10 col-sm-offset-1" ng-view>
+
+	</div>
+	
+</div>
+
+
+
+</body>
+</html>
