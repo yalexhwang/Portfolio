@@ -1,6 +1,14 @@
 alxApp.controller('projectsCtrl', function($scope) {
-	$scope.previewLinks = function(that) {
-		console.log(that);
-	}
+	$scope.mini_city = "Mini City";
+	$scope.hydrosource = "HydroSource";
+	$scope.marti = "COMING SOON";
 	
+
+
+	$scope.seeMore = function(that) {
+		console.log(that);
+		console.log("yo");
+	};
+
+
 });
