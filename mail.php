@@ -15,7 +15,7 @@
     if(!$mail->Send()) {
           echo "Mailer Error: " . $mail->ErrorInfo;
     } else {
-          echo "Message sent!";
+          header('location: http://www.yalexhwang.com/#/about')
     }      
-    header('location: http://www.yalexhwang.com/#/about')
+
 ?>
