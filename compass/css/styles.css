@@ -52,6 +52,62 @@
     transform: translateY(0px);
   }
 }
+@-moz-keyframes bounce {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+  80% {
+    transform: translateY(-4px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+@-webkit-keyframes bounce {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+  80% {
+    transform: translateY(-4px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+@-ms-keyframes bounce {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+  80% {
+    transform: translateY(-4px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+@-o-keyframes bounce {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+  80% {
+    transform: translateY(-4px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
 /* line 1, ../sass/views/projects.scss */
 #projects {
   display: flex;
@@ -348,14 +404,51 @@
 /* line 1, ../sass/views/skills.scss */
 #skills {
   font-family: 'Open Sans', sans-serif;
+  padding: 20px;
   display: flex;
   flex-flow: row wrap;
 }
 
-/* line 7, ../sass/views/skills.scss */
+/* line 8, ../sass/views/skills.scss */
 #canvas {
   width: 300px;
   height: 300px;
+}
+
+/* line 25, ../sass/views/skills.scss */
+.skill {
+  font-size: 15px;
+  padding: 5px 8px;
+  border-radius: 5px;
+  color: white;
+  margin: 5px;
+}
+
+/* line 32, ../sass/views/skills.scss */
+.lng {
+  background-color: #03396c;
+}
+
+/* line 35, ../sass/views/skills.scss */
+.frm {
+  background-color: #005b96;
+}
+
+/* line 38, ../sass/views/skills.scss */
+.ext {
+  background-color: #6497b1;
+}
+
+/* line 41, ../sass/views/skills.scss */
+.db {
+  color: #545454;
+  background-color: #b3cde0;
+}
+
+/* line 45, ../sass/views/skills.scss */
+.other {
+  color: black;
+  background-color: #d7d7d7;
 }
 
 /* line 1, ../sass/views/about.scss */
