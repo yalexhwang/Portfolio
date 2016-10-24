@@ -1,7 +1,7 @@
 alxApp.controller('projectsCtrl', function($scope) {
 	$scope.mini_city = "Mini City";
 	$scope.hydrosource = "HydroSource";
-	$scope.marti = "COMING SOON";
+	$scope.marti = "Marti's Study Room";
 	
 
 

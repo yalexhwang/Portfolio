@@ -2,8 +2,8 @@ alxApp.controller('skillsCtrl', function($scope) {
 
 	var canvas = document.getElementById('canvas');
 	var context = canvas.getContext('2d');
-	canvas.width = 500;
-	canvas.height = 500;
+	// canvas.width = 480;
+	// canvas.height = 480;
 
 	// Image is pre-existing constructor
 	var html = new Image();
