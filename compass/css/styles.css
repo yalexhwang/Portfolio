@@ -111,6 +111,10 @@
 /* line 1, ../sass/views/projects.scss */
 #projects {
   display: flex;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
   flex-flow: row wrap;
   justify-content: space-around;
   align-items: center;
@@ -119,7 +123,7 @@
   margin-top: 10px;
 }
 
-/* line 11, ../sass/views/projects.scss */
+/* line 14, ../sass/views/projects.scss */
 #preview-wrapper {
   width: 95%;
   margin: auto;
@@ -134,18 +138,18 @@
   justify-content: center;
 }
 @media (min-width: 480px) {
-  /* line 11, ../sass/views/projects.scss */
+  /* line 14, ../sass/views/projects.scss */
   #preview-wrapper {
     justify-content: space-around;
   }
 }
 @media (min-width: 768px) {
-  /* line 11, ../sass/views/projects.scss */
+  /* line 14, ../sass/views/projects.scss */
   #preview-wrapper {
     width: 100%;
   }
 }
-/* line 29, ../sass/views/projects.scss */
+/* line 32, ../sass/views/projects.scss */
 #preview-wrapper .prj-preview {
   flex: 0 0 280px;
   height: 260px;
@@ -163,29 +167,29 @@
   padding: 10px;
 }
 @media (min-width: 480px) {
-  /* line 29, ../sass/views/projects.scss */
+  /* line 32, ../sass/views/projects.scss */
   #preview-wrapper .prj-preview {
     margin: 5px 10px 40px 10px;
   }
 }
 @media (min-width: 768px) {
-  /* line 29, ../sass/views/projects.scss */
+  /* line 32, ../sass/views/projects.scss */
   #preview-wrapper .prj-preview {
     flex: 0 1 250px;
   }
 }
-/* line 50, ../sass/views/projects.scss */
+/* line 53, ../sass/views/projects.scss */
 #preview-wrapper .prj-preview .image {
   width: 260px;
   border: 1px solid #dcddd2;
 }
 @media (min-width: 768px) {
-  /* line 50, ../sass/views/projects.scss */
+  /* line 53, ../sass/views/projects.scss */
   #preview-wrapper .prj-preview .image {
     width: 240px;
   }
 }
-/* line 57, ../sass/views/projects.scss */
+/* line 60, ../sass/views/projects.scss */
 #preview-wrapper .prj-preview .title {
   font-weight: lighter;
   font-family: 'Lato', sans-serif;
@@ -195,12 +199,12 @@
   text-align: center;
   margin: 15px 0px;
 }
-/* line 66, ../sass/views/projects.scss */
+/* line 69, ../sass/views/projects.scss */
 #preview-wrapper .prj-preview .title:hover {
   transform: scale(1.2, 1.2);
   font-family: 'Bungee Shade', sans-serif;
 }
-/* line 70, ../sass/views/projects.scss */
+/* line 73, ../sass/views/projects.scss */
 #preview-wrapper .prj-preview .link {
   flex: 1 1 33%;
   text-align: center;
@@ -209,18 +213,18 @@
   font-weight: lighter;
   font-family: 'Open Sans', sans-serif;
 }
-/* line 77, ../sass/views/projects.scss */
+/* line 80, ../sass/views/projects.scss */
 #preview-wrapper .prj-preview .link a {
   padding: 0px 4px;
   border: 1px solid #c3c3c1;
   border-radius: 5px;
 }
-/* line 83, ../sass/views/projects.scss */
+/* line 86, ../sass/views/projects.scss */
 #preview-wrapper .prj-preview .link:hover {
   animation: bounce 0.7s ease-in-out infinite;
 }
 
-/* line 90, ../sass/views/projects.scss */
+/* line 93, ../sass/views/projects.scss */
 .project {
   flex: 1 0 100%;
   display: flex;
@@ -242,59 +246,59 @@
   transition: fadein 1.5s;
 }
 @media (min-width: 768px) {
-  /* line 90, ../sass/views/projects.scss */
+  /* line 93, ../sass/views/projects.scss */
   .project {
     justify-content: flex-start;
   }
 }
 
-/* line 114, ../sass/views/projects.scss */
+/* line 117, ../sass/views/projects.scss */
 .project-thumbnail {
   flex: 1 100%;
   padding: 10px;
   text-align: center;
 }
 @media (min-width: 768px) {
-  /* line 114, ../sass/views/projects.scss */
+  /* line 117, ../sass/views/projects.scss */
   .project-thumbnail {
     flex: 0 180px;
     padding: 0px;
     margin-right: 25px;
   }
 }
-/* line 125, ../sass/views/projects.scss */
+/* line 128, ../sass/views/projects.scss */
 .project-thumbnail .image {
   width: 250px;
   border-radius: 3px;
   border: 1px solid grey;
 }
 @media (min-width: 480px) {
-  /* line 125, ../sass/views/projects.scss */
+  /* line 128, ../sass/views/projects.scss */
   .project-thumbnail .image {
     width: 170px;
   }
 }
 @media (min-width: 768px) {
-  /* line 125, ../sass/views/projects.scss */
+  /* line 128, ../sass/views/projects.scss */
   .project-thumbnail .image {
     width: 160px;
   }
 }
 
-/* line 138, ../sass/views/projects.scss */
+/* line 141, ../sass/views/projects.scss */
 .project-info {
   flex: 1 0 60%;
   margin: 0px 25px;
   max-width: 750px;
 }
 @media (min-width: 768px) {
-  /* line 138, ../sass/views/projects.scss */
+  /* line 141, ../sass/views/projects.scss */
   .project-info {
     flex: 1 0 50%;
     margin: 0px;
   }
 }
-/* line 146, ../sass/views/projects.scss */
+/* line 149, ../sass/views/projects.scss */
 .project-info .info-title {
   font-weight: lighter;
   font-family: 'Lato', sans-serif;
@@ -302,27 +306,27 @@
   text-align: center;
 }
 @media (min-width: 768px) {
-  /* line 146, ../sass/views/projects.scss */
+  /* line 149, ../sass/views/projects.scss */
   .project-info .info-title {
     text-align: left;
   }
 }
-/* line 154, ../sass/views/projects.scss */
+/* line 157, ../sass/views/projects.scss */
 .project-info .info-title h2 {
   margin: 5px 0px 0px 0px;
 }
-/* line 157, ../sass/views/projects.scss */
+/* line 160, ../sass/views/projects.scss */
 .project-info .info-title span {
   font-family: 'Open Sans', sans-serif;
   font-size: 15px;
   font-weight: 300;
 }
-/* line 164, ../sass/views/projects.scss */
+/* line 167, ../sass/views/projects.scss */
 .project-info .info-tech {
   margin-top: 30px;
   text-align: left;
 }
-/* line 167, ../sass/views/projects.scss */
+/* line 170, ../sass/views/projects.scss */
 .project-info .info-tech .tech-tag {
   display: inline-block;
   padding: 3px 5px;
@@ -332,83 +336,83 @@
   font-size: 13px;
   color: #eeeeee;
 }
-/* line 177, ../sass/views/projects.scss */
+/* line 180, ../sass/views/projects.scss */
 .project-info .info-tech .lng {
   background-color: #03396c;
 }
-/* line 180, ../sass/views/projects.scss */
+/* line 183, ../sass/views/projects.scss */
 .project-info .info-tech .frm {
   background-color: #005b96;
 }
-/* line 183, ../sass/views/projects.scss */
+/* line 186, ../sass/views/projects.scss */
 .project-info .info-tech .ext {
   background-color: #6497b1;
 }
-/* line 186, ../sass/views/projects.scss */
+/* line 189, ../sass/views/projects.scss */
 .project-info .info-tech .db {
   color: #545454;
   background-color: #b3cde0;
 }
-/* line 192, ../sass/views/projects.scss */
+/* line 195, ../sass/views/projects.scss */
 .project-info .info-detail {
   margin-top: 40px;
   font-size: 14px;
   text-align: justify;
 }
 @media (min-width: 320px) {
-  /* line 192, ../sass/views/projects.scss */
+  /* line 195, ../sass/views/projects.scss */
   .project-info .info-detail {
     flex: 1 0 100%;
   }
 }
 @media (min-width: 480px) {
-  /* line 192, ../sass/views/projects.scss */
+  /* line 195, ../sass/views/projects.scss */
   .project-info .info-detail {
     flex: 0 90%;
   }
 }
 @media (min-width: 768px) {
-  /* line 192, ../sass/views/projects.scss */
+  /* line 195, ../sass/views/projects.scss */
   .project-info .info-detail {
     padding-right: 5px;
   }
 }
 @media (min-width: 990) {
-  /* line 192, ../sass/views/projects.scss */
+  /* line 195, ../sass/views/projects.scss */
   .project-info .info-detail {
     padding-right: 15px;
   }
 }
-/* line 208, ../sass/views/projects.scss */
+/* line 211, ../sass/views/projects.scss */
 .project-info .info-detail .note {
   color: #ba0000;
   font-size: 12px;
 }
-/* line 212, ../sass/views/projects.scss */
+/* line 215, ../sass/views/projects.scss */
 .project-info .info-detail h3 {
   font-family: 'Lato', sans-serif;
   margin: 40px 0px 0px 0px;
 }
-/* line 216, ../sass/views/projects.scss */
+/* line 219, ../sass/views/projects.scss */
 .project-info .info-detail .subtitle {
   padding: 1px 5px 1px 0px;
   font-weight: 600;
   font-size: 14px;
   color: #004cba;
 }
-/* line 222, ../sass/views/projects.scss */
+/* line 225, ../sass/views/projects.scss */
 .project-info .info-detail .summary {
   margin-top: 15px;
   font-size: 14px;
   color: #383838;
 }
-/* line 229, ../sass/views/projects.scss */
+/* line 232, ../sass/views/projects.scss */
 .project-info .toTop {
   display: block;
   margin-top: 40px;
   text-align: center;
 }
-/* line 233, ../sass/views/projects.scss */
+/* line 236, ../sass/views/projects.scss */
 .project-info .toTop img {
   width: 20px;
 }
