@@ -1,4 +1,3 @@
-
 <?php
 
   ini_set('display_errors', 1);
@@ -18,5 +17,5 @@
     } else {
           echo "Message sent!";
     }      
-
+    header('location: http://www.yalexhwang.com/#/about')
 ?>
