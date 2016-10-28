@@ -152,7 +152,7 @@
 /* line 33, ../sass/views/projects.scss */
 #preview-wrapper .prj-preview {
   flex: 0 0 280px;
-  height: 260px;
+  height: 240px;
   margin: 5px 0px 40px 0px;
   border-radius: 5px;
   border: 1px solid #b4b4b4;
@@ -181,50 +181,92 @@
 /* line 54, ../sass/views/projects.scss */
 #preview-wrapper .prj-preview .image {
   width: 260px;
+  height: 190px;
   border: 1px solid #dcddd2;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
 }
 @media (min-width: 768px) {
   /* line 54, ../sass/views/projects.scss */
   #preview-wrapper .prj-preview .image {
     width: 240px;
+    height: 180px;
   }
 }
-/* line 61, ../sass/views/projects.scss */
-#preview-wrapper .prj-preview .title {
-  font-weight: lighter;
-  font-family: 'Lato', sans-serif;
+/* line 66, ../sass/views/projects.scss */
+#preview-wrapper .prj-preview .image .link {
+  visibility: hidden;
+  flex: 50%;
+  text-align: center;
+  color: white;
   font-size: 16px;
-  color: #004483;
-  width: 100%;
-  text-align: center;
-  margin: 15px 0px;
-}
-/* line 70, ../sass/views/projects.scss */
-#preview-wrapper .prj-preview .title:hover {
-  transform: scale(1.2, 1.2);
-  font-family: 'Bungee Shade', sans-serif;
-}
-/* line 74, ../sass/views/projects.scss */
-#preview-wrapper .prj-preview .link {
-  flex: 1 1 33%;
-  text-align: center;
-  color: #004483;
-  font-size: 13px;
   font-weight: lighter;
   font-family: 'Open Sans', sans-serif;
 }
-/* line 81, ../sass/views/projects.scss */
-#preview-wrapper .prj-preview .link a {
-  padding: 0px 4px;
-  border: 1px solid #c3c3c1;
-  border-radius: 5px;
+/* line 74, ../sass/views/projects.scss */
+#preview-wrapper .prj-preview .image .link a, #preview-wrapper .prj-preview .image .link a:hover, #preview-wrapper .prj-preview .image .link a:visited, #preview-wrapper .prj-preview .image .link a:link, #preview-wrapper .prj-preview .image .link a:active {
+  text-decoration: none;
+  color: white;
 }
-/* line 87, ../sass/views/projects.scss */
-#preview-wrapper .prj-preview .link:hover {
-  animation: bounce 0.7s ease-in-out infinite;
+/* line 81, ../sass/views/projects.scss */
+#preview-wrapper .prj-preview .image:hover .link {
+  visibility: visible;
+  animation: fadein 1s linear;
+}
+/* line 85, ../sass/views/projects.scss */
+#preview-wrapper .prj-preview .image:hover .link:hover {
+  text-decoration: underline;
+}
+/* line 89, ../sass/views/projects.scss */
+#preview-wrapper .prj-preview .image-1 {
+  background-image: url("../images/minicity.png");
+  background-size: cover;
+}
+/* line 93, ../sass/views/projects.scss */
+#preview-wrapper .prj-preview .image-1:hover {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)), url("../images/minicity.png");
+}
+/* line 96, ../sass/views/projects.scss */
+#preview-wrapper .prj-preview .image-2 {
+  background-image: url("../images/hydrosource1.png");
+  background-size: cover;
+}
+/* line 100, ../sass/views/projects.scss */
+#preview-wrapper .prj-preview .image-2:hover {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)), url("../images/hydrosource1.png");
+}
+/* line 103, ../sass/views/projects.scss */
+#preview-wrapper .prj-preview .image-3 {
+  background-image: url("../images/sc1.png");
+  background-size: cover;
+}
+/* line 107, ../sass/views/projects.scss */
+#preview-wrapper .prj-preview .image-3:hover {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)), url("../images/sc1.png");
+}
+/* line 111, ../sass/views/projects.scss */
+#preview-wrapper .prj-preview .title {
+  font-weight: lighter;
+  font-family: 'Lato', sans-serif;
+  font-size: 17px;
+  color: #004483;
+  width: 100%;
+  text-align: center;
+}
+/* line 118, ../sass/views/projects.scss */
+#preview-wrapper .prj-preview .title a, #preview-wrapper .prj-preview .title a:hover, #preview-wrapper .prj-preview .title a:visited, #preview-wrapper .prj-preview .title a:link, #preview-wrapper .prj-preview .title a:active {
+  text-decoration: none;
+  color: #004483;
+}
+/* line 123, ../sass/views/projects.scss */
+#preview-wrapper .prj-preview .title:hover {
+  transform: scale(1.2, 1.2);
+  text-decoration: underline;
 }
 
-/* line 94, ../sass/views/projects.scss */
+/* line 131, ../sass/views/projects.scss */
 .project {
   flex: 1 0 100%;
   display: -webkit-box;
@@ -246,59 +288,59 @@
   transition: fadein 1.5s;
 }
 @media (min-width: 768px) {
-  /* line 94, ../sass/views/projects.scss */
+  /* line 131, ../sass/views/projects.scss */
   .project {
     justify-content: flex-start;
   }
 }
 
-/* line 118, ../sass/views/projects.scss */
+/* line 155, ../sass/views/projects.scss */
 .project-thumbnail {
   flex: 1 100%;
   padding: 10px;
   text-align: center;
 }
 @media (min-width: 768px) {
-  /* line 118, ../sass/views/projects.scss */
+  /* line 155, ../sass/views/projects.scss */
   .project-thumbnail {
     flex: 0 180px;
     padding: 0px;
     margin-right: 25px;
   }
 }
-/* line 129, ../sass/views/projects.scss */
+/* line 166, ../sass/views/projects.scss */
 .project-thumbnail .image {
   width: 250px;
   border-radius: 3px;
   border: 1px solid grey;
 }
 @media (min-width: 480px) {
-  /* line 129, ../sass/views/projects.scss */
+  /* line 166, ../sass/views/projects.scss */
   .project-thumbnail .image {
     width: 170px;
   }
 }
 @media (min-width: 768px) {
-  /* line 129, ../sass/views/projects.scss */
+  /* line 166, ../sass/views/projects.scss */
   .project-thumbnail .image {
     width: 160px;
   }
 }
 
-/* line 142, ../sass/views/projects.scss */
+/* line 179, ../sass/views/projects.scss */
 .project-info {
   flex: 1 0 60%;
   margin: 0px 25px;
   max-width: 750px;
 }
 @media (min-width: 768px) {
-  /* line 142, ../sass/views/projects.scss */
+  /* line 179, ../sass/views/projects.scss */
   .project-info {
     flex: 1 0 50%;
     margin: 0px;
   }
 }
-/* line 150, ../sass/views/projects.scss */
+/* line 187, ../sass/views/projects.scss */
 .project-info .info-title {
   font-weight: lighter;
   font-family: 'Lato', sans-serif;
@@ -306,27 +348,27 @@
   text-align: center;
 }
 @media (min-width: 768px) {
-  /* line 150, ../sass/views/projects.scss */
+  /* line 187, ../sass/views/projects.scss */
   .project-info .info-title {
     text-align: left;
   }
 }
-/* line 158, ../sass/views/projects.scss */
+/* line 195, ../sass/views/projects.scss */
 .project-info .info-title h2 {
   margin: 5px 0px 0px 0px;
 }
-/* line 161, ../sass/views/projects.scss */
+/* line 198, ../sass/views/projects.scss */
 .project-info .info-title span {
   font-family: 'Open Sans', sans-serif;
   font-size: 15px;
   font-weight: 300;
 }
-/* line 168, ../sass/views/projects.scss */
+/* line 205, ../sass/views/projects.scss */
 .project-info .info-tech {
   margin-top: 30px;
   text-align: left;
 }
-/* line 171, ../sass/views/projects.scss */
+/* line 208, ../sass/views/projects.scss */
 .project-info .info-tech .tech-tag {
   display: inline-block;
   padding: 3px 5px;
@@ -336,83 +378,83 @@
   font-size: 13px;
   color: #eeeeee;
 }
-/* line 181, ../sass/views/projects.scss */
+/* line 218, ../sass/views/projects.scss */
 .project-info .info-tech .lng {
   background-color: #03396c;
 }
-/* line 184, ../sass/views/projects.scss */
+/* line 221, ../sass/views/projects.scss */
 .project-info .info-tech .frm {
   background-color: #005b96;
 }
-/* line 187, ../sass/views/projects.scss */
+/* line 224, ../sass/views/projects.scss */
 .project-info .info-tech .ext {
   background-color: #6497b1;
 }
-/* line 190, ../sass/views/projects.scss */
+/* line 227, ../sass/views/projects.scss */
 .project-info .info-tech .db {
   color: #545454;
   background-color: #b3cde0;
 }
-/* line 196, ../sass/views/projects.scss */
+/* line 233, ../sass/views/projects.scss */
 .project-info .info-detail {
   margin-top: 40px;
   font-size: 14px;
   text-align: justify;
 }
 @media (min-width: 320px) {
-  /* line 196, ../sass/views/projects.scss */
+  /* line 233, ../sass/views/projects.scss */
   .project-info .info-detail {
     flex: 1 0 100%;
   }
 }
 @media (min-width: 480px) {
-  /* line 196, ../sass/views/projects.scss */
+  /* line 233, ../sass/views/projects.scss */
   .project-info .info-detail {
     flex: 0 90%;
   }
 }
 @media (min-width: 768px) {
-  /* line 196, ../sass/views/projects.scss */
+  /* line 233, ../sass/views/projects.scss */
   .project-info .info-detail {
     padding-right: 5px;
   }
 }
 @media (min-width: 990) {
-  /* line 196, ../sass/views/projects.scss */
+  /* line 233, ../sass/views/projects.scss */
   .project-info .info-detail {
     padding-right: 15px;
   }
 }
-/* line 212, ../sass/views/projects.scss */
+/* line 249, ../sass/views/projects.scss */
 .project-info .info-detail .note {
   color: grey;
   font-size: 13px;
 }
-/* line 216, ../sass/views/projects.scss */
+/* line 253, ../sass/views/projects.scss */
 .project-info .info-detail h3 {
   font-family: 'Lato', sans-serif;
   margin: 40px 0px 0px 0px;
 }
-/* line 220, ../sass/views/projects.scss */
+/* line 257, ../sass/views/projects.scss */
 .project-info .info-detail .subtitle {
   padding: 1px 5px 1px 0px;
   font-weight: 600;
   font-size: 14px;
   color: #004cba;
 }
-/* line 226, ../sass/views/projects.scss */
+/* line 263, ../sass/views/projects.scss */
 .project-info .info-detail .summary {
   margin-top: 15px;
   font-size: 14px;
   color: #383838;
 }
-/* line 233, ../sass/views/projects.scss */
+/* line 270, ../sass/views/projects.scss */
 .project-info .toTop {
   display: block;
   margin-top: 40px;
   text-align: center;
 }
-/* line 237, ../sass/views/projects.scss */
+/* line 274, ../sass/views/projects.scss */
 .project-info .toTop img {
   width: 20px;
 }

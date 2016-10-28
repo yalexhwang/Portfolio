@@ -10,5 +10,12 @@ alxApp.controller('projectsCtrl', function($scope) {
 		console.log("yo");
 	};
 
+	$scope.showLive = 0;
+	$scope.overThumbnail = function() {
+		$scope.showLive = 1;
+		console.lg('hh');
+	};
+
+
 
 });
