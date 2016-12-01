@@ -204,7 +204,7 @@
 				<h3>Problems Encountered and Solved</h3>
 
 				<div class="summary">
-					<p><span class="subtitle">Use of ng-show/ng-hide in navigation menu items</span>It was an architectural problem in using Angular router. I used ng-show/ng-hide to display or hide menu items depending on sign in/out status. The problem was that they were evaluated only once at the initial page load. To solve the problem, I added a run block <code>.run()</code> with <code>$rootScope</code> and <code>$location </code>. A global variable <code>$rootScope.loggedIn</code> was used to indicate sign in/out status and <code>$locationChangeStart</code> to monitor route change.</p>
+					<p><span class="subtitle">Use of ng-show/ng-hide in navigation menu items</span>It was an architectural problem in using Angular router. I used ng-show/ng-hide to display or hide menu items depending on sign in/out status. The problem was that they were evaluated only once at the initial page load. To solve the problem, I added a run block <code>.run()</code> with <code>$rootScope.$on</code>. A global variable <code>$rootScope.loggedIn</code> was used to indicate sign in/out status and <code>$locationChangeStart</code> to monitor route change.</p>
 				</div>
 
 				<h3>Ideas for Future Implementation</h3>
