@@ -1,32 +1,17 @@
 <section id="projects">
 	<div id="preview-wrapper">
-		<div class="prj-preview">
-			<div class="image image-0">
-				<!-- <span class="link">(Live)</span> -->
-				<span class="link"><a href="https://github.com/yalexhwang/final_project">Git</a></span>
+		<div class="prj-preview" ng-repeat="prj in projectArr track by $index">
+			<div class="image" style="{{prj.backgroundOn}}" ng-mouseenter="hoverSwitchOn($index)" ng-mouseleave="hoverSwitchOff($index)" ng-class="{'imageOff': $index == selectedLink}">
+				<span class="link" ng-class="{'linkOn': $index == selectedLink}">
+					<a href="{{prj.liveLink}}" ng-class="(prj.liveLink == '') ? 'unavailable' : ''">click for<span class="destination">Demo</span></a>
+				</span>
+				<span class="link" ng-class="{'linkOn': $index == selectedLink}">
+					<a href="{{prj.gitLink}}">click for<span class="destination">Git</span></a>
+				</span>
 			</div>
-			<div class="title"><a href="#final" du-smooth-scroll>{{final_prj}}</a></div>
-		</div>
-		<div class="prj-preview">
-			<div class="image image-1">
-				<!-- <span class="link">(Live)</span> -->
-				<span class="link"><a href="https://github.com/yalexhwang/mini_city">Git</a></span>
+			<div class="title">
+				<a href="{{prj.scrollTag}}" du-smooth-scroll ng-mouseenter="titleOff($index)" ng-mouseleave="titleBackOn($index)" ng-class="{'showDetails': $index == selectedTitle}">{{prj.title}}</a>
 			</div>
-			<div class="title"><a href="#mini" du-smooth-scroll>{{mini_city}}</a></div>
-		</div>
-		<div class="prj-preview">
-			<div class="image image-2">
-				<span class="link"><a href="http://yalexhwang.com/hydrosource/#/">Live</a></span>
-				<span class="link"><a href="https://github.com/yalexhwang/e-commerce">Git</a></span>
-			</div>
-			<div class="title"><a href="#hydro" du-smooth-scroll>{{hydrosource}}</a></div>
-		</div>
-		<div class="prj-preview">
-			<div class="image image-3">
-				<span class="link"><a href="http://yalexhwang.com/marti-study-room/#/">Live</a></span>
-				<span class="link"><a href="https://github.com/yalexhwang/marti-study-room">Git</a></span>
-			</div>
-			<div class="title"><a href="#marti" du-smooth-scroll>{{marti}}</a></div>
 		</div>
 	</div>
 
@@ -39,11 +24,18 @@
 		</div>
 		<div class="project-info">
 			<div class="info-title">
-				<h2>Mini City Redesigned</h2>
-				<span>Mini City MVP Redesgined with API| Python, MySQL and Angular | MVC Single Page Application </span>
+				Mini City Redesigned
+				<span> Mini City MVP Redesgined with API </span>
+				<span> Python, MySQL and Angular</span>
+				<span> MVC Single Page Application </span>
 			</div>
 
-			<div class="info-tech">
+			<div class="linkbox">
+				<span class="inline-link"><a href="https://github.com/yalexhwang/final_project"><img src="../compass/images/link-icon2.png">Git</a></span>
+				<span class="inline-link"><a href="../APIdoc.pdf"><img src="../compass/images/link-icon2.png">API Doc</a></span>
+			</div>
+
+<!-- 			<div class="info-tech">
 				<span class="tech-tag lng">HTML5</span>
 				<span class="tech-tag lng">CSS</span>
 				<span class="tech-tag ext">Compass/SASS</span>
@@ -53,22 +45,14 @@
 				<span class="tech-tag lng">Python</span>
 				<span class="tech-tag frm">Flask</span>
 				<span class="tech-tag db">MySQL/Sequel Pro</span>
-			</div>
+			</div> -->
 
 			<div class="info-detail">
+				<p>As my final project at DigitalCrafts, I redesigned <a href="#mini" du-smooth-scroll>the prototype</a> I built for Mini City at <a href="http://goodienation.org/events/atlanta/goodie-hack/goodie-hack-ecdev-atlanta-x-october-2016/">Goodie Nation Hackathon</a>. I wanted to restructure it to have an API and have Admin Portal to interact with the database using the API, in attempt to increase scalability and to have an option of having some data open to public in the future.<br/>
+				In Admin Portal, you can access current data including users, NFC devices, events, and containers. You can register a new user, add a new event, or edit/delete an existing user or event.
+				</p>
 
-				<div class="linkbox">
-					<span class="inline-link"><a href="https://github.com/yalexhwang/final_project">Git</a></span>
-					<span class="inline-link"><a href="../APIdoc.pdf">API Documentation</a></span>
-				</div>
-				
-				<p>As my final project at DigitalCrafts, I redesigned <a href="#mini" du-smooth-scroll>the MVP</a> I built for Mini City at Goodie Nation Hackathon. I wanted to restructure it to have an independent API and have Admin Portal to interact with the database using the API, in attempt to increase scalability and to have an option of making some data open to public.<br/>
-				In Admin Portal, you can access current data including users, NFC devices, events, and containers. You can register a new user, add a new event, or edit/delete an existing user or event.<br />
-				<span class="note">Work in progress: two other team members are developing the admin portal to be fully functioning.</span></p>
-
-					
-				<h3>What I Learned</h3>
-
+				<h3>Notes</h3>
 				<div class="summary">
 					<p><span class="subtitle">CRUD Principle</span> How the basic four operations, Create, Read, Update and Delete correspond to the HTTP methods, such as GET and POST. <br/></p>
 				</div>
@@ -81,23 +65,17 @@
 				<div class="summary">
 					<p><span class="subtitle">Image Upload</span> There are many ways to save an image, but I wanted to try encoding the image and save it as a blob directly into the database, using HTML5's File Reader object. I could quickly see why it was not a common practice to save it in a database because the size of the blob for a rather small image (less than 2MB) was too large to be easily handled in a browser. <br/></p>
 				</div>
-
-				<h3>Problems Encountered and Solved</h3>
-
 				<div class="summary">
 					<p><span class="subtitle">Using Relational Database</span> I decided to use MySQL because the data to be used were mainly about users and their NFC devices. All other data were additional information about users and devices, meaning they are relational in nature. I created 14 tables, one of which was for users, with 5 other 'children' tables such as employment record, place of birth, parents' full name, whose table name starts with a underscore ('_') to indicate its relationship to the 'parent' users table. However, with the data spread out in several tables, writing queries was not as straightforward.</p>
 				</div>
 
 				<h3>Ideas for Future Implementation</h3>
-
 				<div class="summary">
 					<p><span class="subtitle">Authentication Layer</span> Use an API key for authentication. <br/>
 				</div>	
-
 			</div>
 			<div class="toTop"><a href="#/#title" du-smooth-scroll><img src="../compass/images/top-icon.png"></a></div>
 		</div>
-
 	</div>
 
 	<div class="project" id="mini">
@@ -107,11 +85,15 @@
 		</div>
 		<div class="project-info">
 			<div class="info-title">
-				<h2>Mini City</h2>
-				<span>1st Place at Goodie Nation Hackathon | NFC Tag Based Data Management Portal | Python and MySQL 
+				Mini City
+				<span>1st Place at Goodie Nation Hackathon</span>
+				<span>NFC Tag Based Data Management Portal</span>
+				<span>Python and MySQL</span>
 			</div>
-
-			<div class="info-tech">
+			<div class="linkbox">
+				<span class="inline-link"><a href="https://github.com/yalexhwang/mini_city"><img src="../compass/images/link-icon2.png">Git</a></span>
+			</div>
+<!-- 			<div class="info-tech">
 				<span class="tech-tag lng">HTML5</span>
 				<span class="tech-tag lng">CSS</span>
 				<span class="tech-tag ext">Compass/SASS</span>
@@ -120,28 +102,19 @@
 				<span class="tech-tag lng">Python</span>
 				<span class="tech-tag frm">Flask</span>
 				<span class="tech-tag db">MySQL/Sequel Pro</span>
-			</div>
+			</div> -->
 
 			<div class="info-detail">
-
-				<div class="linkbox">
-					<span class="inline-link"><a href="https://github.com/yalexhwang/mini_city">Git</a></span>
-				</div>
-				
-				<p>My team won first place at <a href="http://goodienation.org/events/atlanta/goodie-hack/goodie-hack-ecdev-atlanta-x-october-2016/">the Goodie Hackathon</a> in the General category. We built the basic set-up for a data management portal for our client, Mini City, a non-profit organization based in Atlanta helping the homeless. Mini City wanted to provide services using Near Field Communication (NFC) tag based wearable devices and to manage data gathered from them.<br/>
-				<span class="note">Note: the MVP has been redesigned as my <a href="#final" du-smooth-scroll>final project</a></span></p>
+				<p>My team won first place of the General category at <a href="http://goodienation.org/events/atlanta/goodie-hack/goodie-hack-ecdev-atlanta-x-october-2016/">Goodie Nation Hackathon</a>. I built a prototype for Mini City, an organization that serves the homeless population of Atlanta. Mini City wanted to uitlize Near Field Communication (NFC) tag based wearable devices to provide service while collecting and tracking live data. <br/>
+				<span class="note">Note: the prototpye has been redesigned as <a href="#final" du-smooth-scroll>my final project</a> at DigitalCrafts</span></p>
 					
-				<h3>What I Learned</h3>
-
+				<h3>Notes</h3>
 				<div class="summary">
-					<p><span class="subtitle">NFC</span> Gained familiarity in NFC technology and its application in mobile devices. Created a NFC tag writer which generates and assigns a serial number to a new NFC tag when scanned. <br/></p>
+					<p><span class="subtitle">NFC</span> Gained familiarity in NFC technology and its application in mobile devices. Created a NFC tag writer, an Android app, that generates and assigns a serial number to a new NFC tag when scanned. <br/></p>
 				</div>
 				<div class="summary">
 					<p><span class="subtitle">Passenger and Python WSGI</span> I deployed the web app using Phusion Passenger to a Dreamhost server the Hackathon had set up for each team. <br/></p>
 				</div>
-
-				<h3>Problems Encountered and Solved</h3>
-
 				<div class="summary">
 					<p><span class="subtitle">Working with real-life clients</span> Working with Mini City gave me a glimpse of what it is like to work with real-life clients. Figuring out their needs and turning them into feasible technological concepts and developmental process was challenging, but nonetheless enjoyable. This experience has expanded my understanding of web development beyond mere technical aspects. It was an invaluable practice to address clients’ business needs and to come up with a feasible solution both from the technical and business perspectives.</p>
 				</div>
@@ -159,13 +132,16 @@
 		</div>
 		<div class="project-info">
 			<div class="info-title">
-				<h2>HydroSource</h2>
-				<span>eCommerce Website | MVC Single Page Application | MEAN stack</span>
-				<!-- test username: test -->
-				<!-- test password: 1111111111 -->
+				HydroSource
+				<span>eCommerce Website</span>
+				<span>MVC Single Page Application</span>
+				<span>MEAN stack</span>
 			</div>
-
-			<div class="info-tech">
+			<div class="linkbox">
+				<span class="inline-link"><a href="https://github.com/yalexhwang/e-commerce"><img src="../compass/images/link-icon2.png">Git</a></span>
+				<span class="inline-link"><a href="http://yalexhwang.com/hydrosource/#/"><img src="../compass/images/link-icon2.png">Live</a></span>
+			</div>
+			<!-- <div class="info-tech">
 				<span class="tech-tag lng">HTML5</span>
 				<span class="tech-tag lng">CSS</span>
 				<span class="tech-tag ext">Compass/SASS</span>
@@ -176,18 +152,12 @@
 				<span class="tech-tag frm">Node.js</span>
 				<span class="tech-tag frm">Express.js</span>
 				<span class="tech-tag db">MongoDB/Mongoose</span>
-			</div>
+			</div> -->
 
 			<div class="info-detail">
-				<div class="linkbox">
-					<span class="inline-link"><a href="https://github.com/yalexhwang/e-commerce">Git</a></span>
-					<span class="inline-link"><a href="http://yalexhwang.com/hydrosource/#/">Live</a></span>
-				</div>
-				<span class="note">Test with username <i>test</i>, password <i>1111111111</i></span><br/>
 				<p>HydroSource is an eCommerce website for a (fake) water subscription service. A unique feature is Water Intake Calculator, which takes a user's body weight and hydration level of choice, and calculates the ideal amount of daily water intake. Based on the daily intake and delivery frequency of choice, total water supply for each delivery is determined. It is displayed in Store and Cart on a progress bar, to aid a user's shopping experience.</p>
 					
-				<h3>What I Learned</h3>
-
+				<h3>Notes</h3>
 				<div class="summary">
 					<p><span class="subtitle">bcrypt (npm)</span> I used a Node.js library to hash a password before saving it in the database.I learned the basic concept of bcrypt, how to read a shadow password (prefix for bcrypt hash, cost parameter, salt and hash). <br/></p>
 				</div>
@@ -200,15 +170,11 @@
 				<div class="summary">
 					<p><span class="subtitle">Stripe (API)</span>Stripe is an online payment software platform. I used Stripe's Node.js library to process payment.</p>
 				</div>	
-
-				<h3>Problems Encountered and Solved</h3>
-
 				<div class="summary">
 					<p><span class="subtitle">Use of ng-show/ng-hide in navigation menu items</span>It was an architectural problem in using Angular router. I used ng-show/ng-hide to display or hide menu items depending on sign in/out status. The problem was that they were evaluated only once at the initial page load. To solve the problem, I added a run block <code>.run()</code> with <code>$rootScope.$on</code>. A global variable <code>$rootScope.loggedIn</code> was used to indicate sign in/out status and <code>$locationChangeStart</code> to monitor route change.</p>
 				</div>
 
 				<h3>Ideas for Future Implementation</h3>
-
 				<div class="summary">
 					<p><span class="subtitle">Order Confirmation E-mail</span> Create an automated email notification for orders completed <br/>
 					<span class="subtitle">Token Expiration</span> Detect a user's inactivity and remove the token to sign out the user </p>
@@ -217,6 +183,7 @@
 			<div class="toTop"><a href="#/#title" du-smooth-scroll><img src="../compass/images/top-icon.png"></a></div>
 		</div>
 	</div>
+
 	<div class="project" id="marti">
 		<div class="project-thumbnail">
 			<img class="image" src="../compass/images/sc1.png">
@@ -225,34 +192,29 @@
 		</div>
 		<div class="project-info">
 			<div class="info-title">
-				<h2>Marti's Study Room</h2>
-				<span>Korean Vocaburary Study Web App | MVC Single Page Application</span>
+				Marti's Study Room
+				<span>Korean Vocaburary Study Web App</span>
+				<span>MVC Single Page Application</span>
 			</div>
-			<div class="info-tech">
+			<div class="linkbox">
+				<span class="inline-link"><a href="https://github.com/yalexhwang/Marti-vocab-study"><img src="../compass/images/link-icon2.png">Git</a></span>
+				<span class="inline-link"><a href="http://yalexhwang.com/marti-study-room/#/"><img src="../compass/images/link-icon2.png">Live</a></span>
+			</div>
+<!-- 			<div class="info-tech">
 				<span class="tech-tag lng">HTML5</span>
 				<span class="tech-tag lng">CSS</span>
 				<span class="tech-tag lng">JavaScript</span>
 				<span class="tech-tag frm">Angular.js</span>
 				<span class="tech-tag frm">Node.js</span>
-				<!-- <span class="tech-tag frm">Express.js</span> -->
-				<!-- <span class="tech-tag db">MongoDB/Mongoose</span> -->
-			</div>
+			</div> -->
 
 			<div class="info-detail">
-				<div class="linkbox">
-					<span class="inline-link"><a href="https://github.com/yalexhwang/marti-study-room">Git</a></span>
-					<span class="inline-link"><a href="http://yalexhwang.com/marti-study-room/#/">Live</a></span>
-				</div>
 				<p>Marti's Study Room is a web application that I created for a student I tutor. She wants to get tested on her vocabulary on a regular basis. Instead of writing a quiz each session, I wanted to automate the process so that she can take the quiz whenever she wants.<br/> <span class="note">Work in progress: Version 2 with database connection</span></p>
 					
-				<h3>What I Learned</h3>
-
+				<h3>Notes</h3>
 				<div class="summary">
 					<p><span class="subtitle">Foreign Language Characters</span> When I was working locally, Korean characters were broken, looking like a gibberish. When I served it up on Node.js, they started to display correctly. Researching why, I learned that there were different types of encoding, depending on the language's character sets. I understand why UTF-8, not ASCII, is now widely used. Node.js natively supports UTF-8 encoding, which was why Korean characters were displayed correctly once served up by Node.js. I also added <code>&lt;meta charset="UTF-8"&gt;</code> to make sure web browsers correctly encode my scripts.</p>
 				</div>
-
-				<h3>Problems Encountered and Solved</h3>
-
 				<div class="summary">
 					<p><span class="subtitle">Logic for generating quiz problems and answer options</span> t was more complicated than I initially thought to write a program that randomly selects a word and pairs it with the answer options, only one of which is the correct answer, and track each one of them. It was when I did not know how to use a database; I simply had a <code>.json</code> file that contained vocabulary as an object. I ended up using multiple arrays to temporarily store different groups of words (e.g., problems, correct answer options, incorrect answer options). I am planning to connect a database with a schema, which will help simplify the process of generating quiz questions.</p>
 				</div>

@@ -5,14 +5,21 @@
 	<meta charset="UTF-8">
 	<title>Alex Hwang: Full-stack Web Developer</title>
 	
-	<link href="https://fonts.googleapis.com/css?family=Montserrat|Poppins|Spinnaker|Armata|Open+Sans:300,400,600|Lato|Quicksand|Bungee+Shade" rel="stylesheet">
-	<link rel="stylesheet" href="compass/css/flexboxgrid.min.css" type="text/css">
+	<!-- Font Families -->
+	<link href="https://fonts.googleapis.com/css?family=Montserrat|Poppins|Spinnaker|Racing+Sans+One|Open+Sans:300,400,600|Lato|Armata|Quicksand" rel="stylesheet">
+	<!-- Flexbox Grid -->
+<!-- 	<link rel="stylesheet" href="compass/css/flexboxgrid.min.css" type="text/css"> -->
+	<!-- My CSS -->
 	<link rel="stylesheet" href="compass/css/styles.css">
 
+	<!-- Angular -->
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+	<!-- Angular ngRoute -->
 	<script type="text/javascript" src="https://code.angularjs.org/1.5.8/angular-route.min.js"></script>
+	<!-- Angular Scroll plugin -->
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-scroll/1.0.0/angular-scroll.min.js"></script>
-	<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+	<!-- <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script> -->
+	<!-- My Scripts -->
 	<script type="text/javascript" src="scripts.js"></script>
 	<script type="text/javascript" src="ctrls/projects.js"></script>
 	<script type="text/javascript" src="ctrls/skills.js"></script>
@@ -22,7 +29,7 @@
 
 <body ng-controller="alxCtrl">
 <header>
-	<div id="inner-header" class="col-sm-10 col-sm-offset-1">
+	<div id="inner-header">
 		<div id="title">
 			<span id="alex">Alex Hwang</span>
 			<span id="dev"> Full-stack Web Developer</span>
@@ -39,34 +46,28 @@
 		<!-- End for menu-wrapper -->
 		<div id="links">
 			<div class="link-item">
-				<a href="http://www.yalexhwang.com/alex_hwang_resume.pdf"><img class="social" src="../compass/images/resume0.png"></a>
+				<a href="http://www.yalexhwang.com/alex_hwang_resume.pdf"><img class="social-logo" src="../compass/images/resume0.png"></a>
 			</div>
 			<div class="link-item">
-				<a href="https://www.linkedin.com/in/yalexhwang"><img class="social" src="../compass/images/linkedin.jpg"></a>
+				<a href="https://www.linkedin.com/in/yalexhwang"><img class="social-logo" src="../compass/images/linkedin.jpg"></a>
 			</div>
 			<div class="link-item">
-				<a href="http://github.com/yalexhwang"><img class="social" src="../compass/images/github.png"></a>
+				<a href="http://github.com/yalexhwang"><img class="social-logo" src="../compass/images/github.png"></a>
 			</div>
 		</div>
 	</div>
 </header>
-
-<div id="main">
-	<div id="inner-main" class="col-sm-9 col-sm-offset-1" ng-view>
-
-	</div>
-	
+<div id="main" ng-view>
 </div>
 
 <script>
+	// Google Analytics
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
   ga('create', 'UA-85600456-1', 'auto');
   ga('send', 'pageview');
 </script>
-
 </body>
 </html>
