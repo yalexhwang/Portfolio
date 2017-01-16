@@ -1,9 +1,10 @@
 <section id="projects">
+	<!-- Preview Boxes -->
 	<div id="preview-wrapper">
 		<div class="prj-preview" ng-repeat="prj in projectArr track by $index">
 			<div class="image" style="{{prj.backgroundOn}}" ng-mouseenter="hoverSwitchOn($index)" ng-mouseleave="hoverSwitchOff($index)" ng-class="{'imageOff': $index == selectedLink}">
 				<span class="link" ng-class="{'linkOn': $index == selectedLink}">
-					<a href="{{prj.liveLink}}" ng-class="(prj.liveLink == '') ? 'unavailable' : ''">click for<span class="destination">Demo</span></a>
+					<a href="{{prj.liveLink}}" ng-class="(prj.liveLink == '') ? 'unavailable' : ''">click for<span class="destination">Live</span></a>
 				</span>
 				<span class="link" ng-class="{'linkOn': $index == selectedLink}">
 					<a href="{{prj.gitLink}}">click for<span class="destination">Git</span></a>
@@ -14,7 +15,62 @@
 			</div>
 		</div>
 	</div>
+	<!-- END of Preview Boxes -->
 
+	<!-- Project: Marti Study Room Ver.2-->
+	<div class="project" id="marti2">
+		<div class="project-thumbnail">
+			<img class="image" src="../compass/images/m1.png">
+			<img class="image" src="../compass/images/m2.png">
+			<img class="image" src="../compass/images/m3.png">
+			<img class="image" src="../compass/images/m4.png">
+		</div>
+
+		<div class="project-info">
+			<div class="info-title">
+				Marti's Study Room 2
+				<span>Korean Vocaburary Study Web App</span>
+				<span>MVC Single Page Application</span>
+				<span>MEAN Stack</span>
+			</div>
+			<div class="linkbox">
+				<span class="inline-link"><a href="https://github.com/yalexhwang/marti-study-room"><img src="../compass/images/icon/link.png">Git</a></span>
+				<span class="inline-link"><a href="http://yalexhwang.com/marti-study-room"><img src="../compass/images/icon/link.png">Live</a></span>
+			</div>
+
+			<div class="info-detail">
+				<p>Marti's Study Room has been rebuilt from <a href="#marti" du-smooth-scroll>the original</a>, as a complete web application with a database connection. My student Marti can review vocabulary, manage the words in the database, or take a quiz. Result of a quiz is saved to the database in order to track her progress over time.</p>
+				
+				<h3>Technologies</h3>
+				<div class="info-tech">
+					<span class="tech-tag">HTML5</span>
+					<span class="tech-tag">CSS</span>
+					<span class="tech-tag">Compass/SASS</span>
+					<span class="tech-tag">Bootstrap</span>
+					<span class="tech-tag">JavaScript</span>
+					<span class="tech-tag">Angular.js</span>
+					<span class="tech-tag">Express.js</span>
+					<span class="tech-tag">Node.js</span>
+					<span class="tech-tag">MongoDB/Mongoose</span>
+				</div>
+
+				<h3>Notes</h3>
+				<div class="summary">
+					<p><span class="subtitle">Nested ngRepeat</span> A quiz is generated using ngRepeat on <code>$scope.quizList</code>, an array of objects, each of which represents a quiz question. Because a quiz question comes with multiple answer options, the object has a property <code>answerOptions</code>, which in turn is an array of objects. So, a ngRepeat directive is used to iterate over the array <code>$scope.quizList</code> to populate questions. Then, another ngRepeat, nested inside of the first ngRepeat, loops through the array of answer options that belongs to the quiz question object, populating answer options for the question. Because of rather complicated data structure, it was tricky to place the directives properly within DOM elements while keeping track of <code>$index</code> from both arrays.
+				</div>
+				<div class="summary">
+					<p><span class="subtitle">Consecutive AJAX Requests on Array</span> Each word in the database is tracked with quiz records, whether a student answered the word in question correctly or not. A service method <code>WordBankService.updateWordRecord</code> returns a deferred promise, which is resolved or rejected depending on return value of an AJAX call it makes. Because several words need to be updated at once, they are passed to the service as an array, prompting the service to make consecutive AJAX calls. <code>$q.all</code> was used to make sure all requests are returned before calling the callback function.</p>
+				</div>
+				<div class="summary">
+					<p><span class="subtitle">Opening a Port</span> When the application was deployed to my server initially, no data was being returned from the database. The application was listenting to port 3000, the default value set by Express generator. It turned out that port 3000 was already in use by another application on my server. I opened another port and allowed inbound traffic to it on AWS.</p>
+				</div>
+			</div>
+			<div class="toTop"><a href="#/#title"  du-smooth-scroll><img src="../compass/images/icon/top.png"></a></div>
+		</div>
+	</div>
+	<!-- END of Project -->
+
+	<!-- Project: Mini City Redesigned -->
 	<div class="project" id="final">
 		<div class="project-thumbnail">
 			<img class="image" src="../compass/images/final-1.png">
@@ -22,35 +78,36 @@
 			<img class="image" src="../compass/images/final-3.png">
 			<img class="image" src="../compass/images/final-4.png">
 		</div>
+
 		<div class="project-info">
 			<div class="info-title">
 				Mini City Redesigned
-				<span> Mini City MVP Redesgined with API </span>
+				<span> Mini City Prototype Redesgined with API </span>
 				<span> Python, MySQL and Angular</span>
 				<span> MVC Single Page Application </span>
 			</div>
-
 			<div class="linkbox">
-				<span class="inline-link"><a href="https://github.com/yalexhwang/final_project"><img src="../compass/images/link-icon2.png">Git</a></span>
-				<span class="inline-link"><a href="../APIdoc.pdf"><img src="../compass/images/link-icon2.png">API Doc</a></span>
+				<span class="inline-link"><a href="https://github.com/yalexhwang/final_project"><img src="../compass/images/icon/link.png">Git</a></span>
+				<span class="inline-link"><a href="../APIdoc.pdf"><img src="../compass/images/icon/link.png">API Doc</a></span>
 			</div>
-
-<!-- 			<div class="info-tech">
-				<span class="tech-tag lng">HTML5</span>
-				<span class="tech-tag lng">CSS</span>
-				<span class="tech-tag ext">Compass/SASS</span>
-				<span class="tech-tag frm">BootStrap</span>
-				<span class="tech-tag ext">UI BootStrap</span>
-				<span class="tech-tag frm">Angular.js</span>
-				<span class="tech-tag lng">Python</span>
-				<span class="tech-tag frm">Flask</span>
-				<span class="tech-tag db">MySQL/Sequel Pro</span>
-			</div> -->
 
 			<div class="info-detail">
 				<p>As my final project at DigitalCrafts, I redesigned <a href="#mini" du-smooth-scroll>the prototype</a> I built for Mini City at <a href="http://goodienation.org/events/atlanta/goodie-hack/goodie-hack-ecdev-atlanta-x-october-2016/">Goodie Nation Hackathon</a>. I wanted to restructure it to have an API and have Admin Portal to interact with the database using the API, in attempt to increase scalability and to have an option of having some data open to public in the future.<br/>
 				In Admin Portal, you can access current data including users, NFC devices, events, and containers. You can register a new user, add a new event, or edit/delete an existing user or event.
 				</p>
+
+				<h3>Technologies</h3>
+				<div class="info-tech">
+					<span class="tech-tag">HTML5</span>
+					<span class="tech-tag">CSS</span>
+					<span class="tech-tag">Compass/SASS</span>
+					<span class="tech-tag">Bootstrap/UI Bootstrap</span>
+					<span class="tech-tag">JavaScript</span>
+					<span class="tech-tag">Angular.js</span>
+					<span class="tech-tag">Python</span>
+					<span class="tech-tag">Flask</span>
+					<span class="tech-tag">MySQL</span>
+				</div>
 
 				<h3>Notes</h3>
 				<div class="summary">
@@ -74,15 +131,18 @@
 					<p><span class="subtitle">Authentication Layer</span> Use an API key for authentication. <br/>
 				</div>	
 			</div>
-			<div class="toTop"><a href="#/#title" du-smooth-scroll><img src="../compass/images/top-icon.png"></a></div>
+			<div class="toTop"><a href="#/#title" du-smooth-scroll><img src="../compass/images/icon/top.png"></a></div>
 		</div>
 	</div>
+	<!-- END of Project -->
 
+	<!-- Project: Mini City -->
 	<div class="project" id="mini">
 		<div class="project-thumbnail">
 			<img class="image" src="../compass/images/goodie1.png">
 			<img class="image" src="../compass/images/goodie2.png">
 		</div>
+
 		<div class="project-info">
 			<div class="info-title">
 				Mini City
@@ -91,26 +151,27 @@
 				<span>Python and MySQL</span>
 			</div>
 			<div class="linkbox">
-				<span class="inline-link"><a href="https://github.com/yalexhwang/mini_city"><img src="../compass/images/link-icon2.png">Git</a></span>
+				<span class="inline-link"><a href="https://github.com/yalexhwang/mini_city"><img src="../compass/images/icon/link.png">Git</a></span>
 			</div>
-<!-- 			<div class="info-tech">
-				<span class="tech-tag lng">HTML5</span>
-				<span class="tech-tag lng">CSS</span>
-				<span class="tech-tag ext">Compass/SASS</span>
-				<span class="tech-tag frm">BootStrap</span>
-				<span class="tech-tag ext">Jinja 2</span>
-				<span class="tech-tag lng">Python</span>
-				<span class="tech-tag frm">Flask</span>
-				<span class="tech-tag db">MySQL/Sequel Pro</span>
-			</div> -->
-
 			<div class="info-detail">
 				<p>My team won first place of the General category at <a href="http://goodienation.org/events/atlanta/goodie-hack/goodie-hack-ecdev-atlanta-x-october-2016/">Goodie Nation Hackathon</a>. I built a prototype for Mini City, an organization that serves the homeless population of Atlanta. Mini City wanted to uitlize Near Field Communication (NFC) tag based wearable devices to provide service while collecting and tracking live data. <br/>
 				<span class="note">Note: the prototpye has been redesigned as <a href="#final" du-smooth-scroll>my final project</a> at DigitalCrafts</span></p>
-					
+				
+				<h3>Technologies</h3>
+				<div class="info-tech">
+					<span class="tech-tag">HTML5</span>
+					<span class="tech-tag">CSS</span>
+					<span class="tech-tag">Compass/SASS</span>
+					<span class="tech-tag">Bootstrap</span>
+					<span class="tech-tag">Jinja 2</span>
+					<span class="tech-tag">Python</span>
+					<span class="tech-tag">Flask</span>
+					<span class="tech-tag">MySQL</span>
+				</div>
+
 				<h3>Notes</h3>
 				<div class="summary">
-					<p><span class="subtitle">NFC</span> Gained familiarity in NFC technology and its application in mobile devices. Created a NFC tag writer, an Android app, that generates and assigns a serial number to a new NFC tag when scanned. <br/></p>
+					<p><span class="subtitle">NFC</span> I gained familiarity in NFC technology and its application in mobile devices. A NFC tag writer, an Android app, generates and assigns a serial number to a new NFC tag when scanned. <br/></p>
 				</div>
 				<div class="summary">
 					<p><span class="subtitle">Passenger and Python WSGI</span> I deployed the web app using Phusion Passenger to a Dreamhost server the Hackathon had set up for each team. <br/></p>
@@ -119,10 +180,12 @@
 					<p><span class="subtitle">Working with real-life clients</span> Working with Mini City gave me a glimpse of what it is like to work with real-life clients. Figuring out their needs and turning them into feasible technological concepts and developmental process was challenging, but nonetheless enjoyable. This experience has expanded my understanding of web development beyond mere technical aspects. It was an invaluable practice to address clients’ business needs and to come up with a feasible solution both from the technical and business perspectives.</p>
 				</div>
 			</div>
-			<div class="toTop"><a href="#/#title" du-smooth-scroll><img src="../compass/images/top-icon.png"></a></div>
+			<div class="toTop"><a href="#/#title" du-smooth-scroll><img src="../compass/images/icon/top.png"></a></div>
 		</div>
-
 	</div>
+	<!-- END of Project -->
+
+	<!-- Project: HydroSource -->
 	<div class="project" id="hydro">
 		<div class="project-thumbnail">
 			<img class="image" src="../compass/images/hydrosource1.png">
@@ -130,6 +193,7 @@
 			<img class="image" src="../compass/images/hydrosource3.png">
 			<img class="image" src="../compass/images/hydrosource4.png">
 		</div>
+
 		<div class="project-info">
 			<div class="info-title">
 				HydroSource
@@ -138,25 +202,26 @@
 				<span>MEAN stack</span>
 			</div>
 			<div class="linkbox">
-				<span class="inline-link"><a href="https://github.com/yalexhwang/e-commerce"><img src="../compass/images/link-icon2.png">Git</a></span>
-				<span class="inline-link"><a href="http://yalexhwang.com/hydrosource/#/"><img src="../compass/images/link-icon2.png">Live</a></span>
+				<span class="inline-link"><a href="https://github.com/yalexhwang/e-commerce"><img src="../compass/images/icon/link.png">Git</a></span>
+				<span class="inline-link"><a href="http://yalexhwang.com/hydrosource/#/"><img src="../compass/images/icon/link.png">Live</a></span>
 			</div>
-			<!-- <div class="info-tech">
-				<span class="tech-tag lng">HTML5</span>
-				<span class="tech-tag lng">CSS</span>
-				<span class="tech-tag ext">Compass/SASS</span>
-				<span class="tech-tag frm">BootStrap</span>
-				<span class="tech-tag ext">UI Bootstrap</span>
-				<span class="tech-tag lng">JavaScript</span>
-				<span class="tech-tag frm">Angular.js</span>
-				<span class="tech-tag frm">Node.js</span>
-				<span class="tech-tag frm">Express.js</span>
-				<span class="tech-tag db">MongoDB/Mongoose</span>
-			</div> -->
 
 			<div class="info-detail">
 				<p>HydroSource is an eCommerce website for a (fake) water subscription service. A unique feature is Water Intake Calculator, which takes a user's body weight and hydration level of choice, and calculates the ideal amount of daily water intake. Based on the daily intake and delivery frequency of choice, total water supply for each delivery is determined. It is displayed in Store and Cart on a progress bar, to aid a user's shopping experience.</p>
-					
+				
+				<h3>Technologies</h3>
+				<div class="info-tech">
+					<span class="tech-tag">HTML5</span>
+					<span class="tech-tag">CSS</span>
+					<span class="tech-tag">Compass/SASS</span>
+					<span class="tech-tag">Bootstrap/UI Bootstrap</span>
+					<span class="tech-tag">JavaScript</span>
+					<span class="tech-tag">Angular.js</span>
+					<span class="tech-tag">Node.js</span>
+					<span class="tech-tag">Express.js</span>
+					<span class="tech-tag">MongoDB/Mongoose</span>
+				</div>
+
 				<h3>Notes</h3>
 				<div class="summary">
 					<p><span class="subtitle">bcrypt (npm)</span> I used a Node.js library to hash a password before saving it in the database.I learned the basic concept of bcrypt, how to read a shadow password (prefix for bcrypt hash, cost parameter, salt and hash). <br/></p>
@@ -180,132 +245,94 @@
 					<span class="subtitle">Token Expiration</span> Detect a user's inactivity and remove the token to sign out the user </p>
 				</div>	
 			</div>
-			<div class="toTop"><a href="#/#title" du-smooth-scroll><img src="../compass/images/top-icon.png"></a></div>
+			<div class="toTop"><a href="#/#title" du-smooth-scroll><img src="../compass/images/icon/top.png"></a></div>
 		</div>
 	</div>
+	<!-- END of Project -->
 
+	<!-- Project: Marti Study Room Ver.1 -->
 	<div class="project" id="marti">
 		<div class="project-thumbnail">
 			<img class="image" src="../compass/images/sc1.png">
 			<img class="image" src="../compass/images/sc2.png">
 			<img class="image" src="../compass/images/sc3.png">
 		</div>
+
 		<div class="project-info">
 			<div class="info-title">
 				Marti's Study Room
 				<span>Korean Vocaburary Study Web App</span>
-				<span>MVC Single Page Application</span>
+				<span>MVP: Front-end Only</span>
 			</div>
 			<div class="linkbox">
-				<span class="inline-link"><a href="https://github.com/yalexhwang/Marti-vocab-study"><img src="../compass/images/link-icon2.png">Git</a></span>
-				<span class="inline-link"><a href="http://yalexhwang.com/marti-study-room/#/"><img src="../compass/images/link-icon2.png">Live</a></span>
+				<span class="inline-link"><a href="https://github.com/yalexhwang/Marti-vocab-study"><img src="../compass/images/icon/link.png">Git</a></span>
+				<span class="inline-link"><a href="http://yalexhwang.com/marti_study_room/#/"><img src="../compass/images/icon/link.png">Live</a></span>
 			</div>
-<!-- 			<div class="info-tech">
-				<span class="tech-tag lng">HTML5</span>
-				<span class="tech-tag lng">CSS</span>
-				<span class="tech-tag lng">JavaScript</span>
-				<span class="tech-tag frm">Angular.js</span>
-				<span class="tech-tag frm">Node.js</span>
-			</div> -->
 
 			<div class="info-detail">
-				<p>Marti's Study Room is a web application that I created for a student I tutor. She wants to get tested on her vocabulary on a regular basis. Instead of writing a quiz each session, I wanted to automate the process so that she can take the quiz whenever she wants.<br/> <span class="note">Work in progress: Version 2 with database connection</span></p>
-					
+				<p>Marti's Study Room is the MVP of a web application that I created for a student I tutor. She wants to get tested on her vocabulary on a regular basis. Instead of writing a quiz each session, I wanted to automate the process so that she can take the quiz whenever she wants. <span class="note">A <a href="#marti2" du-smooth-scroll>new version</a> of the application with a database connetion has ben built.</span></p>
+				
+				<h3>Technologies</h3>
+				<div class="info-tech">
+					<span class="tech-tag">HTML5</span>
+					<span class="tech-tag">CSS</span>
+					<span class="tech-tag">Bootstrap</span>
+					<span class="tech-tag">JavaScript</span>
+					<span class="tech-tag">Angular.js</span>
+				</div>
+
 				<h3>Notes</h3>
 				<div class="summary">
 					<p><span class="subtitle">Foreign Language Characters</span> When I was working locally, Korean characters were broken, looking like a gibberish. When I served it up on Node.js, they started to display correctly. Researching why, I learned that there were different types of encoding, depending on the language's character sets. I understand why UTF-8, not ASCII, is now widely used. Node.js natively supports UTF-8 encoding, which was why Korean characters were displayed correctly once served up by Node.js. I also added <code>&lt;meta charset="UTF-8"&gt;</code> to make sure web browsers correctly encode my scripts.</p>
 				</div>
 				<div class="summary">
-					<p><span class="subtitle">Logic for generating quiz problems and answer options</span> t was more complicated than I initially thought to write a program that randomly selects a word and pairs it with the answer options, only one of which is the correct answer, and track each one of them. It was when I did not know how to use a database; I simply had a <code>.json</code> file that contained vocabulary as an object. I ended up using multiple arrays to temporarily store different groups of words (e.g., problems, correct answer options, incorrect answer options). I am planning to connect a database with a schema, which will help simplify the process of generating quiz questions.</p>
+					<p><span class="subtitle">Logic for generating quiz problems and answer options</span> It was more complicated than I initially thought to write a program that randomly selects a word and pairs it with the answer options, only one of which is the correct answer, and track each one of them. It was when I did not know how to use a database; I simply had a <code>.json</code> file that contained vocabulary as an object. I ended up using multiple arrays to temporarily store different groups of words (e.g., problems, correct answer options, incorrect answer options). I am planning to connect to a database with a schema, which will help simplify the process of generating quiz questions.</p>
 				</div>
 			</div>
-			<div class="toTop"><a href="#/#title"  du-smooth-scroll><img src="../compass/images/top-icon.png"></a></div>
+			<div class="toTop"><a href="#/#title"  du-smooth-scroll><img src="../compass/images/icon/top.png"></a></div>
 		</div>
 	</div>
+	<!-- END of Project -->
 
+	<!-- Project: Bring Back Alf -->
 	<!-- <div class="project">
 		<div class="project-thumbnail">
 			<img src="http://placehold.it/250x210">
 		</div>
 		<div class="project-info">
 			<div class="info-title">
-				<h2>Find Your Festival</h2>
-				<span>One-stop Search Web App for music festivals | MVC Single Page Application</span>
-			</div>
-			<div class="info-tech">
-				<span class="tech-tag lng">HTML5</span>
-				<span class="tech-tag lng">CSS</span>
-				<span class="tech-tag lng">JavaScript</span>
-				<span class="tech-tag frm">Angular.js</span>
-				<span class="tech-tag frm">Node.js</span>
-				<span class="tech-tag frm">Express.js</span>
-				<span class="tech-tag db">MongoDB/Mongoose</span>
-			</div>
-
-			<div class="info-detail">
-				<p>Find Your Festival is an one-stop solution for festival-goers who want to decide which music festival(s) to attend. A user provides search criteria and Find Your Festival returns matches with extimated cost, or even a complete itinerary. It also comes with options to buy a ticket and book a flight or a hotel.</p>
-					
-				<h3>What I learned</h3>
-
-				<div class="summary">
-					<p><span class="subtitle">TicketMaster (API)</span>Nulla placerat venenatis purus, eget malesuada neque pharetra nec. Cras ut quam vel sem elementum eleifend. Cras porta quam eu massa blandit, sit amet vulputate augue blandit. Etiam fringilla sed nisi at bibendum. Sed commodo commodo arcu id vulputate. Aenean eget sodales quam.<br/></p>
-				</div>
-				<div class="summary">
-					<p><span class="subtitle">Google Map (API)</span>Nulla placerat venenatis purus, eget malesuada neque pharetra nec. Cras ut quam vel sem elementum eleifend. Cras porta quam eu massa blandit, sit amet vulputate augue blandit. Etiam fringilla sed nisi at bibendum. Sed commodo commodo arcu id vulputate. Aenean eget sodales quam.<br/></p>
-				</div>
-				<div class="summary">
-					<p><span class="subtitle">Open Weather (API)</span>Nulla placerat venenatis purus, eget malesuada neque pharetra nec. Cras ut quam vel sem elementum eleifend. Cras porta quam eu massa blandit, sit amet vulputate augue blandit. Etiam fringilla sed nisi at bibendum. Sed commodo commodo arcu id vulputate. Aenean eget sodales quam.<br/></p>
-				</div>
-
-				<h3>Problems Encountered and Solved</h3>
-
-				<div class="summary">
-					<p><span class="subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit</span>Donec ut turpis et nunc ultricies mollis non sed mi. Nulla eget velit gravida, bibendum nulla eget, feugiat dui. Etiam volutpat enim est, et tempor nulla facilisis id. Mauris fermentum in nisl nec interdum. Sed urna tellus, hendrerit ac bibendum ut, maximus ac risus. Duis mattis aliquam ante, at fermentum urna molestie quis. Pellentesque facilisis ante quis odio posuere, vitae condimentum leo commodo. In leo quam, ultricies eget metus at, tincidunt auctor elit. Nam eu nisl nec tellus pellentesque imperdiet. Cras ultrices tortor sed erat condimentum venenatis. Suspendisse dui nulla, ultrices eu risus id, rhoncus laoreet nisl. Morbi quis metus urna. Nam nec ex vulputate, consequat ante luctus, dapibus augue.</p>
-				</div>
-			</div>
-		</div>
-	</div> -->
-
-	<!-- <div class="project">
-		<div class="project-thumbnail">
-			<img src="http://placehold.it/250x210">
-		</div>
-		<div class="project-info">
-			<div class="info-title">
-				<h2>BuZz For Bees</h2>
-				<span>Twitter-formatted Website | Python with Flask, Jinja2 | MySQL </span>
-			</div>
-			<div class="info-tech">
-				<span class="tech-tag lng">HTML5</span>
-				<span class="tech-tag lng">CSS</span>
-				<span class="tech-tag ext">Compass/SASS</span>
-				<span class="tech-tag frm">BootStrap</span>
-				<span class="tech-tag lng">JavaScript</span>
-				<span class="tech-tag ext">jQuery</span>
-				<span class="tech-tag ext">Jinja 2</span>
-				<span class="tech-tag lng">Python</span>
-				<span class="tech-tag frm">Flask</span>
-				<span class="tech-tag db">MySQL/Sequel Pro</span>
+				Bring Back Alf
+				<span>Twitter-clone Social Networking Web App</span>
+				<span>Python with Flask, Jinja2</span>
 			</div>
 
 			<div class="info-detail">
 				<p>BuZzer For Bees is a Twitter clone, for people who support saving bees.</p>
-					
-				<h3>What I learned</h3>
-
-				<div class="summary">
-					<p><span class="subtitle">jsonify/json.dumps</span>Donec aliquet posuere ipsum, non eleifend nisl pulvinar vitae. Quisque ut urna quis ante hendrerit efficitur quis ut nisl. Nam viverra nulla vel mollis finibus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse aliquam odio mi, a blandit nunc ultricies commodo. Curabitur sed dapibus libero. Ut metus ante, sagittis ac placerat eu, laoreet ut orci. Morbi ac felis at lacus viverra mollis. Ut quis nibh ac quam tristique molestie. <br/></p>
+				
+				<h3>Technologies</h3>
+				<div class="info-tech">
+					<span class="tech-tag">HTML5</span>
+					<span class="tech-tag">CSS</span>
+					<span class="tech-tag">Compass/SASS</span>
+					<span class="tech-tag">Bootstrap</span>
+					<span class="tech-tag">JavaScript</span>
+					<span class="tech-tag">jQuery</span>
+					<span class="tech-tag">Jinja 2</span>
+					<span class="tech-tag">Python</span>
+					<span class="tech-tag">Flask</span>
+					<span class="tech-tag">MySQL</span>
 				</div>
 
-				<h3>Problems Encountered and Solved</h3>
-
+				<h3>Notes</h3>
 				<div class="summary">
-					<p><span class="subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit</span>Donec ut turpis et nunc ultricies mollis non sed mi. Nulla eget velit gravida, bibendum nulla eget, feugiat dui. Etiam volutpat enim est, et tempor nulla facilisis id. Mauris fermentum in nisl nec interdum. Sed urna tellus, hendrerit ac bibendum ut, maximus ac risus. Duis mattis aliquam ante, at fermentum urna molestie quis. Pellentesque facilisis ante quis odio posuere, vitae condimentum leo commodo. In leo quam, ultricies eget metus at, tincidunt auctor elit. Nam eu nisl nec tellus pellentesque imperdiet. Cras ultrices tortor sed erat condimentum venenatis. Suspendisse dui nulla, ultrices eu risus id, rhoncus laoreet nisl. Morbi quis metus urna. Nam nec ex vulputate, consequat ante luctus, dapibus augue.
-
-</p>
+					<p><span class="subtitle">jsonify/json.dumps</span>Donec aliquet posuere ipsum, non eleifend nisl pulvinar vitae. Quisque ut urna quis ante hendrerit efficitur quis ut nisl. Nam viverra nulla vel mollis finibus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+				</div>
+				<div class="summary">
+					<p><span class="subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit</span>Donec ut turpis et nunc ultricies mollis non sed mi. Nulla eget velit gravida, bibendum nulla eget, feugiat dui. Etiam volutpat enim est, et tempor nulla facilisis id. Mauris fermentum in nisl nec interdum. Sed urna tellus, hendrerit ac bibendum ut, maximus ac risus. Duis mattis aliquam ante, at fermentum urna molestie quis.</p>
 				</div>
 			</div>
 		</div>
 	</div> -->
-	
+	<!-- END of Project -->
+
 </section>	

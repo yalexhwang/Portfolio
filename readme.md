@@ -1,3 +1,2 @@
-# Portfolio coming soon.
-
-## I am a full-stack developer with an emphasis in JavaScript.
+### Alex Hwang's Portfolio
+Personal portfolio developed using HTML, CSS/SASS, COMPASS and Angular.js

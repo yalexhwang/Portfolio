@@ -1,5 +1,13 @@
 alxApp.controller('projectsCtrl', function($scope) {
 	$scope.projectArr = [];
+	var prj5 = {
+		title: "Marti's Study Room 2",
+		backgroundOn: "background-image: url('../compass/images/m1.png')",
+		backgroundOff: 'background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)), url("../compass/images/m1.png");',
+		liveLink: "http://yalexhwang.com/marti-study-room/#/",
+		gitLink: "https://github.com/yalexhwang/marti-study-room",
+		scrollTag: "#marti2"
+	};
 	var prj4 = {
 		title: "Mini City Redesigned",
 		backgroundOn: "background-image: url('../compass/images/final-1.png')",
@@ -33,7 +41,7 @@ alxApp.controller('projectsCtrl', function($scope) {
 		scrollTag: "#marti"
 	};
 
-	$scope.projectArr.push(prj4, prj3, prj2, prj1);
+	$scope.projectArr.push(prj5, prj4, prj3, prj2, prj1);
 	console.log($scope.projectArr);
 
 	$scope.hoverSwitchOn = function(index) {

@@ -1,81 +1,73 @@
 alxApp.controller('skillsCtrl', function($scope) {
+	var paragraphs = [];
 
-	var canvas = document.getElementById('canvas');
-	var context = canvas.getContext('2d');
-	// canvas.width = 480;
-	// canvas.height = 480;
+	$scope.p1arr = { on: 0, members: [$scope.html, scope.css, $scope.js]};
+	$scope.p2arr = { on: 0, members: [$scope.compass, scope.sass]};
+	$scope.p3arr = { on: 0, members: [$scope.bootstrap, $scope.flex]};
+	$scope.p4arr = { on: 0, members: [$scope.angular]};
+	$scope.p5arr = { on: 0, members: [$scope.python, $scope.flask]};
+	$scope.p6arr = { on: 0, members: [$scope.node]};
+	$scope.p7arr = { on: 0, members: [$scope.express]};
+	$scope.p8arr = { on: 0, members: [$scope.mongo, $scope.sql]};
+	$scope.p9arr = { on: 0, members: [$scope.git]};
+	$scope.p10arr = { on: 0, members: [$scope.agile, $scope.pm]};
 
-	// Image is pre-existing constructor
-	var html = new Image();
-	html.src = "../compass/images/html.png";
+	paragraphs.push($scope.p1arr, $scope.p2arr, $scope.p3arr, $scope.p4arr, $scope.p5arr, $scope.p6arr, $scope.p7arr, $scope.p8arr, $scope.p9arr, $scope.p10arr);
 
-	var css = new Image();
-	css.src = "../compass/images/css.png";
+	$scope.showP = function(pNum, Num) {
+		$scope.messageOn = 1;
+		pArr[pNum] = 1;
+		pArrArr[pNum]
+		var p1 = [$scope.html, scope.css, $scope.js];
+		if (pNum == 1) {
+			$scope.html = 0;
+			scope.css = 0;
+			$scope.js = 0;
+			if (insideNum == ) {
 
-	var sass = new Image();
-	sass.src = "../compass/images/sass.png";
+			}
+		} else if (pNum == 2) {
 
-	var compass = new Image();
-	compass.src = "../compass/images/compass.png";
+		} else if (pNum == 3) {
 
-	var boot = new Image();
-	boot.src = "../compass/images/bootstrap.jpg";
-	var uiBoot = new Image();
-	uiBoot.src = "../compass/images/ui-bootstrap.png";
-	var js = new Image();
-	js.src = "../compass/images/js.png";
-	var jq = new Image();
-	jq.src = "../compass/images/jquery.jpeg";
-	var angular = new Image();
-	angular.src = "../compass/images/angular.png";
-	var node = new Image();
-	node.src = "../compass/images/node.jpg";
-	var exp = new Image();
-	exp.src = "../compass/images/express.png";
-	var python = new Image();
-	python.src = "../compass/images/python.png";
-	var jinja = new Image();
-	jinja.src = "../compass/images/jinja2.png";
-	var flask = new Image();
-	flask.src = "../compass/images/flask.png";
-	var jade = new Image();
-	jade.src = "../compass/images/jade.jpeg";
-	var mysql = new Image();
-	mysql.src = "../compass/images/mysql.png";
-	var mongo = new Image();
-	mongo.src = "../compass/images/mongo.jpeg";
-	var mongoose = new Image();
-	mongoose.src = "../compass/images/mongoose.png";
-	var ajax = new Image();
-	ajax.src = "../compass/images/ajax.jpg";
-	var json = new Image();
-	json.src = "../compass/images/json.jpeg";
+		} else if (pNum == 4) {
 
-	html.onload = function() {
-		context.drawImage(html, 0, 10, 60, 55);
-		context.drawImage(css, 20, 50, 50, 55);
-		context.drawImage(sass, 60, 150, 65, 55);
-		context.drawImage(compass, 120, 80, 140, 50);
-		context.drawImage(boot, 150, 120, 70, 60);
-		context.drawImage(js, 280, 120, 60, 55);
-		context.drawImage(jq, 340, 80, 80, 65);
-		context.drawImage(angular, 340, 200, 80, 75);
-		context.drawImage(node, 300, 20, 65, 65);
-		context.drawImage(exp, 90, 450, 100, 65);
-		context.drawImage(python, 220, 300, 80, 80);
-		context.drawImage(jinja, 180, 380, 100, 60);
-		context.drawImage(flask, 50, 260, 90, 80);
-		context.drawImage(jade, 5, 380, 100, 65);
-		context.drawImage(mysql, 400, 270, 100, 65);
-		context.drawImage(mongo, 300, 380, 80, 70);
-		context.drawImage(mongoose, 330, 270, 120, 65);
-		context.drawImage(ajax, 400, 380, 80, 70);
-		context.drawImage(json, 210, 230, 120, 65);
+		} else if (pNum == 5) {
+
+		} else if (pNum == 6) {
+
+		} else if (pNum == 7) {
+
+		} else if (pNum == 8) {
+
+		} else if (pNum == 9) {
+
+		} else if (pNum == 10) {
+
+		} else if (pNum == 11) {
+
+		}
+
+
+		if ($scope.p1) {
+			$scope.p1 = 0;
+		} else {
+			$scope.p1 = 1;
+		}
+		if (which == 0) {
+			$scope.html = 1;
+		} else if (which == 1) {
+			$scope.css = 1;
+		} else if (which == 2) {
+			$scope.js = 1;
+		}
 	};
-	
 
-	var goblinLocation = {
-		x: 0,
-		y: 0
-	};
+	$scope.closeP = function(which) {
+		console.log(which);
+		console.log(typeof which);
+		if (which == 1) {
+			$scope.p1 = 0;
+		}
+	}
 });
