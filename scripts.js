@@ -23,7 +23,3 @@ alxApp.config(function($routeProvider) {
 		redirectTo: '/'
 	});
 });
-
-// function initialize(arr) {
-// 	for (var i = 0;)
-// }

@@ -691,12 +691,19 @@
   display: -webkit-flex;
   display: flex;
   flex-flow: row wrap;
+  justify-content: center;
+  align-content: flex-start;
   font-size: 14px;
   color: #383838;
   text-align: justify;
+  border: 3px solid #dcddd2;
+  background: url("../images/profile/skills-back.png") center no-repeat;
+  background-size: auto 100%;
+  height: 700px;
 }
-/* line 12, ../sass/views/skills.scss */
+/* line 17, ../sass/views/skills.scss */
 #skills #board {
+  padding-top: 10px;
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
@@ -704,114 +711,95 @@
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
-  align-content: flex-start;
-  border: 3px solid #dcddd2;
-  background: url("../images/profile/skills-back.png") center no-repeat;
-  background-size: auto 100%;
-  height: 700px;
+  align-self: flex-start;
 }
-/* line 25, ../sass/views/skills.scss */
-#skills #board #greet {
-  flex: 100%;
-  margin: 15px auto;
-  color: #dcddd2;
-  font-size: 18px;
-  font-family: 'Open Sans', sans-serif;
-  text-align: center;
-}
-@media (min-width: 480px) {
-  /* line 25, ../sass/views/skills.scss */
-  #skills #board #greet {
-    margin-top: 20px;
-    padding-left: 30px;
-    text-align: left;
-    font-size: 20px;
-  }
-}
-/* line 38, ../sass/views/skills.scss */
-#skills #board #greet span {
-  display: block;
-  font-size: 13px;
-  font-style: italic;
-  margin-top: -5px;
-}
-/* line 46, ../sass/views/skills.scss */
+/* line 27, ../sass/views/skills.scss */
 #skills #board .skill {
-  margin: 5px;
+  margin: 3px;
   padding: 2px 6px;
   font-family: "Armata", Arial, sans-serif;
-  font-size: 18px;
+  font-size: 16px;
   text-align: center;
   border-radius: 5px;
   background-color: black;
 }
 @media (min-width: 480px) {
-  /* line 46, ../sass/views/skills.scss */
+  /* line 27, ../sass/views/skills.scss */
   #skills #board .skill {
     font-size: 22px;
   }
 }
-/* line 58, ../sass/views/skills.scss */
+/* line 39, ../sass/views/skills.scss */
 #skills #board .lng {
   color: #fdfe02;
 }
 @media (min-width: 480px) {
-  /* line 58, ../sass/views/skills.scss */
+  /* line 39, ../sass/views/skills.scss */
   #skills #board .lng {
     font-size: 26px;
   }
 }
-/* line 64, ../sass/views/skills.scss */
+/* line 45, ../sass/views/skills.scss */
 #skills #board .frm {
   color: #1ba1e2;
 }
-/* line 67, ../sass/views/skills.scss */
+/* line 48, ../sass/views/skills.scss */
 #skills #board .frm2 {
   color: #ff0097;
 }
-/* line 70, ../sass/views/skills.scss */
+/* line 51, ../sass/views/skills.scss */
 #skills #board .db {
   color: #0bff01;
 }
-/* line 73, ../sass/views/skills.scss */
+/* line 54, ../sass/views/skills.scss */
 #skills #board .misc {
   color: #999999;
 }
 @media (min-width: 480px) {
-  /* line 73, ../sass/views/skills.scss */
+  /* line 54, ../sass/views/skills.scss */
   #skills #board .misc {
     font-size: 18px;
   }
 }
+/* line 61, ../sass/views/skills.scss */
+#skills #message-wrapper {
+  margin-top: 20px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  font-size: 15px;
+  text-align: left;
+  color: white;
+}
+/* line 76, ../sass/views/skills.scss */
+#skills #message-wrapper .message-box {
+  margin: 0px 20px 20px;
+  padding: 10px;
+}
 /* line 79, ../sass/views/skills.scss */
-#skills #board .etc {
-  font-weight: 700;
+#skills #message-wrapper .message-box .quote {
+  width: 12px;
+  padding: 0px 5px;
 }
-/* line 83, ../sass/views/skills.scss */
-#skills #board .face {
-  width: 100px;
-  height: auto;
+/* line 87, ../sass/views/skills.scss */
+#skills #message-wrapper .focus {
+  font-size: 24px;
 }
 
-/* line 91, ../sass/views/skills.scss */
+/* line 93, ../sass/views/skills.scss */
 .shakeR {
-  animation: shake 2s ease-in infinite;
-}
-
-/* line 94, ../sass/views/skills.scss */
-.shakeL {
   animation: shake 2s ease infinite;
 }
 
-/* line 98, ../sass/views/skills.scss */
-#message {
-  font-family: "Quicksand", sans-serif;
-  display: none;
-}
-/* line 102, ../sass/views/skills.scss */
-#message .focus {
-  font-size: 18px;
-  font-family: "Armata", Arial, sans-serif;
+/* line 96, ../sass/views/skills.scss */
+.shakeL {
+  animation: shake 1.5s ease-in-out infinite;
 }
 
 /* line 1, ../sass/views/about.scss */

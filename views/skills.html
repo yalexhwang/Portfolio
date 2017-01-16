@@ -1,66 +1,79 @@
 <section id="skills">
 	<div id="board">
-		<div id="greet">
-			Ask me about my skills
-			<span>Hover over or click</span>
-		</div>
-		
-		<span class="skill lng pulse" ng-click="showP(1, 0)" ng-mouseenter="showP(1, 0)" ng-mouseleave="closeP(1)">HTML</span>
-		<span class="skill lng pulse" ng-click="showP(1, 1)" ng-mouseenter="showP1(1, 1)" ng-mouseleave="closeP(1)">CSS</span>
-		<span class="skill frm2 pullDown shakeR">Compass</span>
-		<span class="skill frm2 pullUp shakeR">SASS</span>
-		<span class="skill frm2 bounce shakeR">Bootstrap</span>
-		<span class="skill lng pulse" ng-click="showP1(1, 2)" ng-mouseenter="showP1(1, 2)" ng-mouseleave="closeP(1)">JavaScript</span>
-		<span class="skill frm floating">AngularJS</span>
-		<span class="skill frm floating">Node.js</span>
-		<span class="skill frm floating">Express</span>
-		<span class="skill db tossing">MongoDB</span>
-		<span class="skill lng pulse">Python</span>
-		<span class="skill frm floating">Flask</span>	
-		<span class="skill db tossing">MySQL</span>
-		<span class="skill misc stretchLeft shakeL">Git</span>
-		<span class="skill misc stretchRight shakeL">Agile scrum</span>
-		<span class="skill misc stretchRight shakeL">Project Management</span>
-
-		<div id="message-box">
-		<!-- 	<img src="../compass/images/profile/c2c.png" class="face">
-			<img src="../compass/images/profile/c5c.png" class="face"> -->
-		</div>
+		<span class="{{item.class}}" ng-click="answer($index)" ng-repeat="item in skillsArr track by $index">{{item.name}}</span>
+	</div>
+	<div id="message-wrapper">
+		<span class="message-box pullUp" ng-hide="msgOn">
+			<img class="quote" src="../compass/images/profile/quote1.png">
+			<span id="defaultMessage">{{message}}</span>
+			<img class="quote" src="../compass/images/profile/quote2.png">
+		</span>
+		<!-- <span class="message-box pullUp" id="message" ng-repeat="item in skillsArr track by $index" ng-class="{'messageOn': (selectedMsg == $index)}">
+			<img class="quote" src="../compass/images/profile/quote1.png">
+			<span id="defaultMessage">{{item.message}}</span>
+			<img class="quote" src="../compass/images/profile/quote2.png">
+		</span> -->
+<!-- 		<span class="message-box pullUp" id="message" ng-if="msgOn">
+			<img class="quote" src="../compass/images/profile/quote1.png">
+			<span id="defaultMessage">{{msg}}</span>
+			<img class="quote" src="../compass/images/profile/quote2.png">
+		</span> -->
+		<span class="message-box pullUp" ng-if="msg1.on">
+			<img class="quote" src="../compass/images/profile/quote1.png">
+			<span class="defaultMessage">Of course the basics, I know my way around <span ng-class="{'focus': html}">HTML</span>, <span ng-class="{'focus': css}">CSS</span>, and <span ng-class="{'focus': js}">JavaScript.</span></span>
+			<img class="quote" src="../compass/images/profile/quote2.png">
+		</span>
+		<span class="message-box pullUp" ng-if="msg2.on">
+			<img class="quote" src="../compass/images/profile/quote1.png">
+			<span class="defaultMessage">When working with CSS, I prefer to use Sass based  <span ng-class="{'focus': compass}">Compass</span> because it is easier to organize and maintin stylesheets with all the perks  <span ng-class="{'focus': sass}">Sass</span> brings, like nesting, variables, mixins and selector inheritence. It saves me time (and headache).</span>
+			<img class="quote" src="../compass/images/profile/quote2.png">
+		</span>
+		<span class="message-box pullUp" ng-if="msg3.on">
+			<img class="quote" src="../compass/images/profile/quote1.png">
+			<span class="defaultMessage">I also use <span class="focus">Bootstrap</span> often, to a varying degree. Just to take advantage of its default CSS settings and compoments, so I can avoid having to look at HTML elements that are so basic. Or go all out and make use of its custom jQuery plugins to have some live action going on. Although Bootstrap's reponsive utilities are useful, once I learned about Flexbox, CSS3's new layout mode, it has become my go-to method of creating a fully responsive layout.</span>
+			<img class="quote" src="../compass/images/profile/quote2.png">
+		</span>
+		<span class="message-box pullUp" ng-if="msg4.on">
+			<img class="quote" src="../compass/images/profile/quote1.png">
+			<span class="defaultMessage">I am a fan of <span class="focus">AngularJS</span>. When I first learned to use Angular, the difference was so drastic that it felt like when you go from the Stone Age to the Iron Age in Age of Empires 2(!) I have built a few single page web applications with Angular, including this portfolio. One thing with Angular that I did not quite like was that it is not an ideal match with Bootstrap, which uses jQuery plugins. But there is a nice alternative, Angular UI. It includes UI Bootsrap as well as UI Router, which comes handy when you want to have more than one view and even nest them as you wish.</span>
+			<img class="quote" src="../compass/images/profile/quote2.png">
+		</span>
+		<span class="message-box pullUp" ng-if="msg5.on">
+			<img class="quote" src="../compass/images/profile/quote1.png">
+			<span class="defaultMessage"><span class="focus">Node.js</span> is awesome just by the fact that it enables server-side JavaScript. Because Node.js is one of the reasons why I was able to become a full-stack web developer -- that it lowered a barrier to back-end development -- I have a sense of appreciation for Node. I am digging deep into it to truly appreciate and fully explore what it has to offer.</span>
+			<img class="quote" src="../compass/images/profile/quote2.png">
+		</span>
+		<span class="message-box pullUp" ng-if="msg6.on">
+			<img class="quote" src="../compass/images/profile/quote1.png">
+			<span class="defaultMessage">Like Flask with Python, <span class="focus">Express</span> and Node.js is a lovely pair. Express Generator sets you a skeleton for an web application in seconds.</span>
+			<img class="quote" src="../compass/images/profile/quote2.png">
+		</span>
+		<span class="message-box pullUp" ng-if="msg7.on">
+			<img class="quote" src="../compass/images/profile/quote1.png">
+			<span class="defaultMessage">I like using  <span ng-class="{'focus': mongo}">MongoDB</span>, simply because it is straightfoward to handle JSON based data with JavaScript. However, I have chosen to use  <span ng-class="{'focus': sql}">MySQL</span> when data in use is relational by nature - useful information can be drawn based on how different pieces of data relates to each other.</span>
+			<img class="quote" src="../compass/images/profile/quote2.png">
+		</span>
+		<span class="message-box pullUp" ng-if="msg8.on">
+			<img class="quote" src="../compass/images/profile/quote1.png">
+			<span class="defaultMessage"> <span ng-class="{'focus': python}">Python</span>, who doesn't love Python? I like how simple its syntax is. Makes code aesthetically more pleasing to my eyes. I don't have to worry about balancing braces, although I have to be careful with indentation. Along with  <span ng-class="{'focus': flask}">Flask</span>, it is so simple to get basic set up started to build an web applicaiton. virtualenv is useful, it helps to manage separate environtments for different Python projects.</span>
+			<img class="quote" src="../compass/images/profile/quote2.png">
+		</span>
+		<span class="message-box pullUp" ng-if="msg9.on">
+			<img class="quote" src="../compass/images/profile/quote1.png">
+			<span class="defaultMessage">It took me a while to understand the basic operations of <span class="focus">Git</span> (all those times with a merge conflict...) Now I see how beneficial it is, especially thinking about all the trouble I had with document control in my previous career.</span>
+			<img class="quote" src="../compass/images/profile/quote2.png">
+		</span>
+		<span class="message-box pullUp" ng-if="msg10.on">
+			<img class="quote" src="../compass/images/profile/quote1.png">
+			<span class="defaultMessage">I am also familar with <span class="focus">Agile scrum methodology</span>, thanks to the group projects I did at DigitalCrafts.</span>
+			<img class="quote" src="../compass/images/profile/quote2.png">
+		</span>
+		<span class="message-box pullUp" ng-if="msg11.on">
+			<img class="quote" src="../compass/images/profile/quote1.png">
+			<span class="defaultMessage">I come from <span class="focus">project management background</span>, so I understand the general concepts and approaches.</span>
+			<img class="quote" src="../compass/images/profile/quote2.png">
+		</span>
 	</div>
 
-	<div id="message">
-		<p ng-show="p1arr.on" class="pullUp">
-		Of course the basics, I know my way around 
-		<span ng-class="{'focus': html}">HTML</span>, <span ng-class="{'focus': css}">CSS</span>, and <span ng-class="{'focus': js}">JavaScript</span>.
-		</p>
-		<p ng-show="p2arr.on">
-		When working with CSS, I prefer to use SASS based <span  ng-class="{'focus': compass}">Compass</span> because it is easier to organize and maintin stylesheets with all the perks <span ng-class="{'focus': sass}">SASS</span> brings, like nesting, variables, mixins and selector inheritence. It saves me time (and headache). 
-		</p>
-		<p ng-show="p3arr.on">
-		I also use <span ng-class="{'focus': bootstrap}">Bootstrap</span> all the time, to a varying degree. Just to take advantage of its default CSS settings and compoments, so I can avoid having to look at HTML elements that are so basic. Or go all out and make use of its custom jQuery plugins to have some live action going on.
-		</p>
-		<p ng-show="p3arr.on">
-		Although Bootstrap's reponsive utilities are useful, once I learned about <span ng-class="{'focus': flex}"">Flexbox</span>, CSS3's new layout mode, it has become my go-to method of creating a fully responsive layout.
-		</p>
-		<p ng-show="p4arr.on">
-		I am a fan of <span ng-class="{'focus': angular}">AngularJS</span>. When I first learned to use Angular, the difference was so drastic that it felt like when you go from the Stone Age to the Iron Age in Age of Empires 2(!) I have built a few single page web applications with Angular, including this portfolio. One thing with Angular that I did not quite like was that it is not an ideal match with Bootstrap, which uses jQuery plugins. But there is a nice alternative, <span class="etc">Angular UI</span>. It includes <span class="etc">UI Bootsrap</span> as well as <span class="etc">UI Router</span>, which comes handy when you want to have more than one view and even nest them as you wish. 
-		</p>
-		<p ng-show="p5arr.on">
-		<span ng-class="{'focus': python}">Python</span>, who doesn't love Python? I like how simple its syntax is. Makes code aesthetically more pleasing to my eyes. I don't have to worry about balancing braces, although I have to be careful with indentation. Along with <span ng-class="{'focus': flask}">Flask</span>, it is so simple to get basic set up started to build an web applicaiton. <span class="etc">virtualenv</span> is useful, it helps to manage separate environtments for different Python projects.
-		</p>
-		<p ng-show="p6arr.on">
-		<span ng-class="{'focus': node}">Node.js</span> is awesome just by the fact that it enables server-side JavaScript. Because Node.js is one of the reasons why I was able to become a full-stack web developer -- that it lowered a barrier to back-end development -- I have a sense of appreciation for Node. I am digging deep into it to truly appreciate and fully explore what it has to offer. 
-		<p ng-show="p7arr.on">
-		Like Flask with Python, <span ng-class="{'focus': express}">Express</span> and Node.js is a lovely pair. Express Generator sets you a skeleton for an web application in seconds.
-		</p>
-		<p ng-show="p8arr.on">
-		I like using <span ng-class="{'focus': mongo}">MongoDB</span>, simply because it is straightfoward to handle JSON based data with JavaScript. However, I have chosen to use <span ng-class="{'focus': sql}">MySQL</span> when data in use is relational by nature -- useful information can be drawn based on how different pieces of data relates to each other. 
-		</p>
-		<p ng-show="p9arr.on">
-		Of course I use <span ng-class="{'focus': git}">Git</span>. It took me a while to understand the basic operations (all those times with a merge conflict...) Now I see how beneficial it is, especially thinking about all the trouble I had with document control in my previous career.
-		</p>
-		<p ng-show="p10arr.on">
-		I am also familar with <span ng-class="{'focus': agile}">Agile scrum methodology</span> thanks to the group projects I did at DigitalCrafts. I come from <span ng-class="{'focus': pm}">project management</span> background, so I understand the general concepts and approaches.
-		</p>
-	</div> 
+
 </section>
