@@ -1,8 +1,7 @@
 <section id="about">
 	<div id="photo-wrapper">
-		<img class="photo main" src="../compass/images/profile/alex0.png">
-		<img class="photo sub" src="../compass/images/profile/alex1.png">
-		<img class="photo bauer" src="../compass/images/profile/bauer.png">
+		<img class="{{photo.class}}" src="{{photo.url}}" ng-repeat="photo in photoArr track by $index" ng-click="popUp($index)" ng-mouseenter="popUp($index)" ng-mouseleave="popOff($index)" ng-class="{'face': faceOn}"></div>
+	
 	</div>
 
 	<div id="intro">
@@ -24,7 +23,9 @@
 			<p>I am originally from Seoul, Korea. I studied Sociology and Japanese at Emory University and started my career in project management. I eventually found coding to be my way to connect with the world and chose to pursue it. </p>
 			<p>I recently graduated from <i><a href="http://www.digitalcrafts.com">DigitalCrafts'</a> 16 week Immersive Web Development program</i> and starting a new phase of life as a web developer. </p>
 			<p>I like logic, systems, and abstraction. I enjoy asking questions and sharing new ideas. I currently live with Bauer, a 5 year old Giant Schnauzer mix, in Atlanta, Georgia.</p>
-			<div id="email"><a href="mailto:y.alex.hwang@gmail.com"><img src="../compass/images/icon/email.ico">y.alex.hwang@gmail.com</a></div>
+			<div id="email">
+				<a href="mailto:y.alex.hwang@gmail.com">y.alex.hwang@gmail.com</a>
+			</div>
 		</div>
 
 		<!-- <div id="contact">

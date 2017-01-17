@@ -3,12 +3,10 @@
 <head>
 	<meta name="viewport" content="width=device-width">
 	<meta charset="UTF-8">
-	<title>Alex Hwang: Full-stack Web Developer</title>
+	<title>Alex Hwang</title>
 	
 	<!-- Font Families -->
-	<link href="https://fonts.googleapis.com/css?family=Montserrat|Poppins|Spinnaker|Racing+Sans+One|Open+Sans:300,400,600|Armata:400,700|Quicksand|Handlee" rel="stylesheet">
-	<!-- Flexbox Grid -->
-<!-- 	<link rel="stylesheet" href="compass/css/flexboxgrid.min.css" type="text/css"> -->
+	<link href="https://fonts.googleapis.com/css?family=Montserrat|Poppins|Spinnaker|Racing+Sans+One|Open+Sans:300,400,500|Armata:400,700|Quicksand|Lato" rel="stylesheet">
 	<!-- My CSS -->
 	<link rel="stylesheet" href="compass/css/views/animations.css">
 	<link rel="stylesheet" href="compass/css/styles.css">
@@ -19,7 +17,6 @@
 	<script type="text/javascript" src="https://code.angularjs.org/1.5.8/angular-route.min.js"></script>
 	<!-- Angular Scroll plugin -->
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-scroll/1.0.0/angular-scroll.min.js"></script>
-	<!-- <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script> -->
 	<!-- My Scripts -->
 	<script type="text/javascript" src="scripts.js"></script>
 	<script type="text/javascript" src="ctrls/projects.js"></script>
@@ -32,7 +29,7 @@
 <header>
 	<div id="inner-header">
 		<div id="title">
-			<span id="alex">Alex Hwang</span>
+			<a href="mailto:y.alex.hwang@gmail.com"><span id="alex">Alex Hwang</span></a>
 			<span id="dev"> Full-stack Web Developer</span>
 		</div>
 		<div id="menu-wrapper">
@@ -60,7 +57,12 @@
 </header>
 <div id="main" ng-view>
 </div>
-
+<footer>
+	<div id="inner-footer">
+		Thank you! :)
+		<a href="mailto:y.alex.hwang@gmail.com">y.alex.hwang@gmail.com</a>
+	</div>
+</footer>
 <script>
 	// Google Analytics
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

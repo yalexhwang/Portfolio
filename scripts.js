@@ -1,7 +1,6 @@
 var alxApp = angular.module('alxApp', ['ngRoute', 'duScroll']);
 
 alxApp.controller('alxCtrl', function($scope) {
-	$scope.test = "haha";
 
 });
 

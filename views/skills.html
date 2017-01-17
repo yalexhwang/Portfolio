@@ -1,79 +1,75 @@
 <section id="skills">
-	<div id="board">
-		<span class="{{item.class}}" ng-click="answer($index)" ng-repeat="item in skillsArr track by $index">{{item.name}}</span>
-	</div>
 	<div id="message-wrapper">
 		<span class="message-box pullUp" ng-hide="msgOn">
 			<img class="quote" src="../compass/images/profile/quote1.png">
 			<span id="defaultMessage">{{message}}</span>
 			<img class="quote" src="../compass/images/profile/quote2.png">
 		</span>
-		<!-- <span class="message-box pullUp" id="message" ng-repeat="item in skillsArr track by $index" ng-class="{'messageOn': (selectedMsg == $index)}">
-			<img class="quote" src="../compass/images/profile/quote1.png">
-			<span id="defaultMessage">{{item.message}}</span>
-			<img class="quote" src="../compass/images/profile/quote2.png">
-		</span> -->
-<!-- 		<span class="message-box pullUp" id="message" ng-if="msgOn">
-			<img class="quote" src="../compass/images/profile/quote1.png">
-			<span id="defaultMessage">{{msg}}</span>
-			<img class="quote" src="../compass/images/profile/quote2.png">
-		</span> -->
-		<span class="message-box pullUp" ng-if="msg1.on">
+		<span class="message-box" ng-class="{'slideExpandUp': answerAction1.on, 'pullUp': answerAction2.on, 'pullDown': answerAction3.on, 'slideLeft': answerAction4.on, 'slideRight': answerAction5.on, 'stretchLeft': answerAction6.on, 'stretchRight': answerAction7.on, 'bigEnterance': answerAction8.on}" ng-if="msg1.on">
 			<img class="quote" src="../compass/images/profile/quote1.png">
 			<span class="defaultMessage">Of course the basics, I know my way around <span ng-class="{'focus': html}">HTML</span>, <span ng-class="{'focus': css}">CSS</span>, and <span ng-class="{'focus': js}">JavaScript.</span></span>
 			<img class="quote" src="../compass/images/profile/quote2.png">
 		</span>
-		<span class="message-box pullUp" ng-if="msg2.on">
+		<span class="message-box" ng-class="{'slideExpandUp': answerAction1.on, 'pullUp': answerAction2.on, 'pullDown': answerAction3.on, 'slideLeft': answerAction4.on, 'slideRight': answerAction5.on, 'stretchLeft': answerAction6.on, 'stretchRight': answerAction7.on, 'bigEnterance': answerAction8.on}" ng-if="msg2.on">
 			<img class="quote" src="../compass/images/profile/quote1.png">
-			<span class="defaultMessage">When working with CSS, I prefer to use Sass based  <span ng-class="{'focus': compass}">Compass</span> because it is easier to organize and maintin stylesheets with all the perks  <span ng-class="{'focus': sass}">Sass</span> brings, like nesting, variables, mixins and selector inheritence. It saves me time (and headache).</span>
+			<span class="defaultMessage">When working with CSS, I prefer to use Sass based  <span ng-class="{'focus': compass}">Compass</span> because it becomes easier to organize and maintain stylesheets with all the perks  <span ng-class="{'focus': sass}">Sass</span> brings, like nesting, variables, mixins and selector inheritance. It saves me time (and headache).</span>
 			<img class="quote" src="../compass/images/profile/quote2.png">
 		</span>
-		<span class="message-box pullUp" ng-if="msg3.on">
+		<span class="message-box" ng-class="{'slideExpandUp': answerAction1.on, 'pullUp': answerAction2.on, 'pullDown': answerAction3.on, 'slideLeft': answerAction4.on, 'slideRight': answerAction5.on, 'stretchLeft': answerAction6.on, 'stretchRight': answerAction7.on, 'bigEnterance': answerAction8.on}" ng-if="msg3.on">
 			<img class="quote" src="../compass/images/profile/quote1.png">
-			<span class="defaultMessage">I also use <span class="focus">Bootstrap</span> often, to a varying degree. Just to take advantage of its default CSS settings and compoments, so I can avoid having to look at HTML elements that are so basic. Or go all out and make use of its custom jQuery plugins to have some live action going on. Although Bootstrap's reponsive utilities are useful, once I learned about Flexbox, CSS3's new layout mode, it has become my go-to method of creating a fully responsive layout.</span>
+			<span class="defaultMessage">I also use <span class="focus">Bootstrap</span> often, to a varying degree. Just to take advantage of its default CSS settings and components, so I can avoid having to look at HTML elements that are so basic. Or go all out and make use of its custom jQuery plugins to have some live action going on. Although Bootstrap's responsive utilities are useful, once I learned about Flexbox, CSS3's new layout mode, it has become my go-to method of creating a fully responsive layout.</span>
 			<img class="quote" src="../compass/images/profile/quote2.png">
 		</span>
-		<span class="message-box pullUp" ng-if="msg4.on">
+		<span class="message-box" ng-class="{'slideExpandUp': answerAction1.on, 'pullUp': answerAction2.on, 'pullDown': answerAction3.on, 'slideLeft': answerAction4.on, 'slideRight': answerAction5.on, 'stretchLeft': answerAction6.on, 'stretchRight': answerAction7.on, 'bigEnterance': answerAction8.on}" ng-if="msg4.on">
 			<img class="quote" src="../compass/images/profile/quote1.png">
-			<span class="defaultMessage">I am a fan of <span class="focus">AngularJS</span>. When I first learned to use Angular, the difference was so drastic that it felt like when you go from the Stone Age to the Iron Age in Age of Empires 2(!) I have built a few single page web applications with Angular, including this portfolio. One thing with Angular that I did not quite like was that it is not an ideal match with Bootstrap, which uses jQuery plugins. But there is a nice alternative, Angular UI. It includes UI Bootsrap as well as UI Router, which comes handy when you want to have more than one view and even nest them as you wish.</span>
+			<span class="defaultMessage">I am a fan of <span class="focus">AngularJS</span>. When I first learned to use Angular, the difference was so drastic that it felt like when you go from the Stone Age to the Iron Age in Age of Empires 2(!) I have built a few single page web applications with Angular, including this portfolio. One thing with Angular that I did not quite like was that it is not an ideal match with Bootstrap, which uses jQuery plugins. But there is a nice alternative, Angular UI. It includes UI Bootstrap as well as UI Router, which comes handy when you want to have more than one view and even nest them as you wish.</span>
 			<img class="quote" src="../compass/images/profile/quote2.png">
 		</span>
-		<span class="message-box pullUp" ng-if="msg5.on">
+		<span class="message-box" ng-class="{'slideExpandUp': answerAction1.on, 'pullUp': answerAction2.on, 'pullDown': answerAction3.on, 'slideLeft': answerAction4.on, 'slideRight': answerAction5.on, 'stretchLeft': answerAction6.on, 'stretchRight': answerAction7.on, 'bigEnterance': answerAction8.on}" ng-if="msg5.on">
 			<img class="quote" src="../compass/images/profile/quote1.png">
 			<span class="defaultMessage"><span class="focus">Node.js</span> is awesome just by the fact that it enables server-side JavaScript. Because Node.js is one of the reasons why I was able to become a full-stack web developer -- that it lowered a barrier to back-end development -- I have a sense of appreciation for Node. I am digging deep into it to truly appreciate and fully explore what it has to offer.</span>
 			<img class="quote" src="../compass/images/profile/quote2.png">
 		</span>
-		<span class="message-box pullUp" ng-if="msg6.on">
+		<span class="message-box" ng-class="{'slideExpandUp': answerAction1.on, 'pullUp': answerAction2.on, 'pullDown': answerAction3.on, 'slideLeft': answerAction4.on, 'slideRight': answerAction5.on, 'stretchLeft': answerAction6.on, 'stretchRight': answerAction7.on, 'bigEnterance': answerAction8.on}" ng-if="msg6.on">
 			<img class="quote" src="../compass/images/profile/quote1.png">
 			<span class="defaultMessage">Like Flask with Python, <span class="focus">Express</span> and Node.js is a lovely pair. Express Generator sets you a skeleton for an web application in seconds.</span>
 			<img class="quote" src="../compass/images/profile/quote2.png">
 		</span>
-		<span class="message-box pullUp" ng-if="msg7.on">
+		<span class="message-box" ng-class="{'slideExpandUp': answerAction1.on, 'pullUp': answerAction2.on, 'pullDown': answerAction3.on, 'slideLeft': answerAction4.on, 'slideRight': answerAction5.on, 'stretchLeft': answerAction6.on, 'stretchRight': answerAction7.on, 'bigEnterance': answerAction8.on}" ng-if="msg7.on">
 			<img class="quote" src="../compass/images/profile/quote1.png">
-			<span class="defaultMessage">I like using  <span ng-class="{'focus': mongo}">MongoDB</span>, simply because it is straightfoward to handle JSON based data with JavaScript. However, I have chosen to use  <span ng-class="{'focus': sql}">MySQL</span> when data in use is relational by nature - useful information can be drawn based on how different pieces of data relates to each other.</span>
+			<span class="defaultMessage">I like using  <span ng-class="{'focus': mongo}">MongoDB</span>, simply because it is straightforward to handle JSON based data with JavaScript. However, I have chosen to use  <span ng-class="{'focus': sql}">MySQL</span> when data in use is relational by nature - useful information can be drawn based on how different pieces of data relates to each other.</span>
 			<img class="quote" src="../compass/images/profile/quote2.png">
 		</span>
-		<span class="message-box pullUp" ng-if="msg8.on">
+		<span class="message-box" ng-class="{'slideExpandUp': answerAction1.on, 'pullUp': answerAction2.on, 'pullDown': answerAction3.on, 'slideLeft': answerAction4.on, 'slideRight': answerAction5.on, 'stretchLeft': answerAction6.on, 'stretchRight': answerAction7.on, 'bigEnterance': answerAction8.on}" ng-if="msg8.on">
 			<img class="quote" src="../compass/images/profile/quote1.png">
-			<span class="defaultMessage"> <span ng-class="{'focus': python}">Python</span>, who doesn't love Python? I like how simple its syntax is. Makes code aesthetically more pleasing to my eyes. I don't have to worry about balancing braces, although I have to be careful with indentation. Along with  <span ng-class="{'focus': flask}">Flask</span>, it is so simple to get basic set up started to build an web applicaiton. virtualenv is useful, it helps to manage separate environtments for different Python projects.</span>
+			<span class="defaultMessage"> <span ng-class="{'focus': python}">Python</span>, who doesn't love Python? I like how simple its syntax is. Makes code aesthetically more pleasing to my eyes. I don't have to worry about balancing braces, although I have to be careful with indentation. Along with  <span ng-class="{'focus': flask}">Flask</span>, it is so simple to get basic set up started to build an web application. virtualenv is useful, it helps to manage separate environments for different Python projects.</span>
 			<img class="quote" src="../compass/images/profile/quote2.png">
 		</span>
-		<span class="message-box pullUp" ng-if="msg9.on">
+		<span class="message-box" ng-class="{'slideExpandUp': answerAction1.on, 'pullUp': answerAction2.on, 'pullDown': answerAction3.on, 'slideLeft': answerAction4.on, 'slideRight': answerAction5.on, 'stretchLeft': answerAction6.on, 'stretchRight': answerAction7.on, 'bigEnterance': answerAction8.on}" ng-if="msg9.on">
 			<img class="quote" src="../compass/images/profile/quote1.png">
 			<span class="defaultMessage">It took me a while to understand the basic operations of <span class="focus">Git</span> (all those times with a merge conflict...) Now I see how beneficial it is, especially thinking about all the trouble I had with document control in my previous career.</span>
 			<img class="quote" src="../compass/images/profile/quote2.png">
 		</span>
-		<span class="message-box pullUp" ng-if="msg10.on">
+		<span class="message-box" ng-class="{'slideExpandUp': answerAction1.on, 'pullUp': answerAction2.on, 'pullDown': answerAction3.on, 'slideLeft': answerAction4.on, 'slideRight': answerAction5.on, 'stretchLeft': answerAction6.on, 'stretchRight': answerAction7.on, 'bigEnterance': answerAction8.on}" ng-if="msg10.on">
 			<img class="quote" src="../compass/images/profile/quote1.png">
-			<span class="defaultMessage">I am also familar with <span class="focus">Agile scrum methodology</span>, thanks to the group projects I did at DigitalCrafts.</span>
+			<span class="defaultMessage">At first, I was confused what an (web) API really was. After working with a few, like Google Maps API, The Movie DB Api, and TicketMaster API, I find the concept and its practice very intriguing. I had fun creating a simple <span class="focus">RESTful API</span> on my own. I loved that it was a comprehensive process of creating a kind of system that also involved your data structures and their formats. I even felt a slight sense of empowerment, because it was as if I was making laws for international trades that everyone who wants to do business with me has to follow! 
+			</span>
 			<img class="quote" src="../compass/images/profile/quote2.png">
 		</span>
-		<span class="message-box pullUp" ng-if="msg11.on">
+		<span class="message-box" ng-class="{'slideExpandUp': answerAction1.on, 'pullUp': answerAction2.on, 'pullDown': answerAction3.on, 'slideLeft': answerAction4.on, 'slideRight': answerAction5.on, 'stretchLeft': answerAction6.on, 'stretchRight': answerAction7.on, 'bigEnterance': answerAction8.on}" ng-if="msg11.on">
+			<img class="quote" src="../compass/images/profile/quote1.png">
+			<span class="defaultMessage">I am also familiar with <span class="focus">Agile scrum methodology</span>, thanks to the group projects I did at DigitalCrafts.</span>
+			<img class="quote" src="../compass/images/profile/quote2.png">
+		</span>
+		<span class="message-box" ng-class="{'slideExpandUp': answerAction1.on, 'pullUp': answerAction2.on, 'pullDown': answerAction3.on, 'slideLeft': answerAction4.on, 'slideRight': answerAction5.on, 'stretchLeft': answerAction6.on, 'stretchRight': answerAction7.on, 'bigEnterance': answerAction8.on}" ng-if="msg12.on">
 			<img class="quote" src="../compass/images/profile/quote1.png">
 			<span class="defaultMessage">I come from <span class="focus">project management background</span>, so I understand the general concepts and approaches.</span>
 			<img class="quote" src="../compass/images/profile/quote2.png">
 		</span>
+		
 	</div>
-
+	<div id="board">
+		<span class="{{item.class}}" ng-click="answer($index)" ng-repeat="item in skillsArr track by $index">{{item.name}}</span>
+	</div>
 
 </section>
