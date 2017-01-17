@@ -24,7 +24,7 @@ alxApp.controller('skillsCtrl', function($scope) {
 	var obj15 = new SkillObj('Agile Scrum', 'skill misc stretchRight shakeL');
 	var obj16 = new SkillObj('Project Management', 'skill misc stretchLeft shakeR');
 	$scope.skillsArr = [obj0, obj1, obj2, obj3, obj4, obj5, obj6, obj7, obj8, obj9, obj10, obj11, obj12, obj13, obj14, obj15, obj16];
-	console.log($scope.skillsArr);
+
 	//Answers
 	$scope.msg1 = {on: 0};
 	$scope.msg2 = {on: 0};
@@ -39,7 +39,7 @@ alxApp.controller('skillsCtrl', function($scope) {
 	$scope.msg11 = {on: 0};
 	$scope.msg12 = {on: 0};
 	var msgArr = [$scope.msg1, $scope.msg2, $scope.msg3, $scope.msg4, $scope.msg5, $scope.msg6, $scope.msg7, $scope.msg8, $scope.msg9, $scope.msg10, $scope.msg11, $scope.msg12];
-	console.log(msgArr);
+
 	//Answer Actions
 	$scope.answerAction1 = {on: 0};
 	$scope.answerAction2 = {on: 0};
@@ -51,7 +51,6 @@ alxApp.controller('skillsCtrl', function($scope) {
 	$scope.answerAction8 = {on: 0};
 	var actionArr = [$scope.answerAction1, $scope.answerAction2, $scope.answerAction3, $scope.answerAction4, $scope.answerAction5, $scope.answerAction6, $scope.answerAction7, $scope.answerAction8];
 	$scope.answer = function(index) {
-		console.log(index);
 		$scope.msgOn = 1;
 		if ((index == 0) || (index == 1) || (index == 5)) {
 			initialize(msgArr);
@@ -118,15 +117,11 @@ alxApp.controller('skillsCtrl', function($scope) {
 			initialize(msgArr);
 			$scope.msg10.on = 1;
 		} else if (index == 15) {
-			console.log('Agile Scrum');
 			initialize(msgArr);
 			$scope.msg11.on = 1;
-			console.log($scope.msg11);
 		} else if (index == 16) {
-			console.log('PM');
 			initialize(msgArr);
 			$scope.msg12.on = 1;
-			console.log($scope.msg12);
 		}
 		initialize(actionArr);
 		randomAction(actionArr);
