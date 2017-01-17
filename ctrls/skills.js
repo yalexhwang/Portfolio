@@ -8,8 +8,8 @@ alxApp.controller('skillsCtrl', function($scope) {
 	}
 	var obj0 = new SkillObj('HTML', 'skill lng pulse');
 	var obj1 = new SkillObj('CSS', 'skill lng pulse', 'Of course the basics, I know my way around HTML, CSS, and JavaScript.');
-	var obj2 = new SkillObj('COMPASS', 'skill frm2 pullDown shakeL');
-	var obj3 = new SkillObj('Sass', 'skill frm2 pullUp shakeR');
+	var obj2 = new SkillObj('COMPASS', 'skill frm2 shakeL');
+	var obj3 = new SkillObj('Sass', 'skill frm2 shakeR');
 	var obj4 = new SkillObj('Bootstrap', 'skill frm2 bounce shakeL');
 	var obj5 = new SkillObj('JavaScript', 'skill lng pulse');
 	var obj6 = new SkillObj('AngularJS', 'skill frm floating');
@@ -19,10 +19,10 @@ alxApp.controller('skillsCtrl', function($scope) {
 	var obj10 = new SkillObj('Python', 'skill lng pulse');
 	var obj11 = new SkillObj('Flask', 'skill frm floating');
 	var obj12 = new SkillObj('MySQL', 'skill db tossing');
-	var obj13 = new SkillObj('Git', 'skill other stretchLeft shakeL');
-	var obj14 = new SkillObj('RESTful API', 'skill other stretchLeft shakeR');
-	var obj15 = new SkillObj('Agile Scrum', 'skill misc stretchRight shakeL');
-	var obj16 = new SkillObj('Project Management', 'skill misc stretchLeft shakeR');
+	var obj13 = new SkillObj('Git', 'skill other shakeL');
+	var obj14 = new SkillObj('RESTful API', 'skill other shakeR');
+	var obj15 = new SkillObj('Agile Scrum', 'skill misc shakeL');
+	var obj16 = new SkillObj('Project Management', 'skill misc shakeR');
 	$scope.skillsArr = [obj0, obj1, obj2, obj3, obj4, obj5, obj6, obj7, obj8, obj9, obj10, obj11, obj12, obj13, obj14, obj15, obj16];
 
 	//Answers
