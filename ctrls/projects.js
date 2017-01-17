@@ -40,9 +40,7 @@ alxApp.controller('projectsCtrl', function($scope) {
 		gitLink: "https://github.com/yalexhwang/marti-study-room",
 		scrollTag: "#marti"
 	};
-
 	$scope.projectArr.push(prj5, prj4, prj3, prj2, prj1);
-	console.log($scope.projectArr);
 
 	$scope.hoverSwitchOn = function(index) {
 		$scope.initial = $scope.projectArr[index].backgroundOn;
