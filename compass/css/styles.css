@@ -770,9 +770,35 @@
 
 /* line 1, ../sass/views/skills.scss */
 #skills {
-  height: 600px;
-  max-width: 900px;
-  margin: auto;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-content: flex-start;
+  font-size: 14px;
+  color: #383838;
+  text-align: justify;
+}
+/* line 13, ../sass/views/skills.scss */
+#skills #photo-wrapper {
+  flex: 100%;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: flex-start;
+}
+/* line 23, ../sass/views/skills.scss */
+#skills #photo-wrapper #myPhoto {
+  padding: 0px 10px;
+  min-height: 400px;
+  flex: 100%;
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
@@ -781,18 +807,95 @@
   flex-flow: row wrap;
   justify-content: center;
   align-content: space-between;
-  font-size: 14px;
-  color: #383838;
-  text-align: justify;
-  border: 1px solid black;
-  background: url("../images/profile/skills-back.png") center no-repeat;
-  background-size: auto 100%;
+  background-image: url("../images/profile/skills-back1.png");
+  background-size: contain;
+  background-position: 50% 100%;
+  background-repeat: no-repeat;
+  background-attachment: local;
 }
-/* line 20, ../sass/views/skills.scss */
-#skills #message-wrapper {
-  height: 320px;
-  padding-top: 20px;
-  box-sizing: border-box;
+@media (min-width: 480px) {
+  /* line 23, ../sass/views/skills.scss */
+  #skills #photo-wrapper #myPhoto {
+    background-position: 70% 100%;
+  }
+}
+@media (min-width: 992px) {
+  /* line 23, ../sass/views/skills.scss */
+  #skills #photo-wrapper #myPhoto {
+    width: 80%;
+  }
+}
+/* line 46, ../sass/views/skills.scss */
+#skills #photo-wrapper #myPhoto #mySkills {
+  margin: 10px 0px;
+  height: auto;
+  flex: 100%;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+@media (min-width: 480px) {
+  /* line 46, ../sass/views/skills.scss */
+  #skills #photo-wrapper #myPhoto #mySkills {
+    justify-content: flex-start;
+  }
+}
+@media (min-width: 992px) {
+  /* line 46, ../sass/views/skills.scss */
+  #skills #photo-wrapper #myPhoto #mySkills {
+    width: 80%;
+  }
+}
+/* line 63, ../sass/views/skills.scss */
+#skills #photo-wrapper #myPhoto #mySkills .skill {
+  margin: 3px;
+  padding: 2px 6px;
+  font-family: "Armata", Arial, sans-serif;
+  font-size: 17px;
+  text-align: center;
+  border-radius: 5px;
+  background-color: black;
+}
+@media (min-width: 768px) {
+  /* line 63, ../sass/views/skills.scss */
+  #skills #photo-wrapper #myPhoto #mySkills .skill {
+    font-size: 20px;
+  }
+}
+/* line 76, ../sass/views/skills.scss */
+#skills #photo-wrapper #myPhoto #mySign {
+  flex: 100%;
+  height: auto;
+  min-height: 35px;
+  margin: 10px auto;
+  padding: 10px;
+  border: 1px solid #dcddd2;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+@media (min-width: 480px) {
+  /* line 76, ../sass/views/skills.scss */
+  #skills #photo-wrapper #myPhoto #mySign {
+    flex: 80%;
+    min-height: 60px;
+    padding: 15px;
+  }
+}
+@media (min-width: 768px) {
+  /* line 76, ../sass/views/skills.scss */
+  #skills #photo-wrapper #myPhoto #mySign {
+    max-width: 540px;
+    min-height: 70px;
+    margin: 10px 10px 10px 55px;
+  }
+}
+/* line 95, ../sass/views/skills.scss */
+#skills #photo-wrapper #myPhoto #mySign .message-board {
+  flex: 100%;
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
@@ -801,157 +904,76 @@
   flex-flow: row wrap;
   justify-content: center;
   align-items: center;
-  font-family: 'Open Sans', Helvetica Neue, sans-serif;
-  font-size: 14px;
-  font-weight: 500;
-  color: black;
-  text-align: left;
+  text-align: justify;
+  font-size: 13px;
+  animation: fadein 1.2s ease-in;
 }
 @media (min-width: 480px) {
-  /* line 20, ../sass/views/skills.scss */
-  #skills #message-wrapper {
-    text-align: justify;
+  /* line 95, ../sass/views/skills.scss */
+  #skills #photo-wrapper #myPhoto #mySign .message-board {
+    font-size: 14px;
   }
 }
 @media (min-width: 768px) {
-  /* line 20, ../sass/views/skills.scss */
-  #skills #message-wrapper {
-    width: 90%;
-    margin: auto;
-    max-width: 680px;
+  /* line 95, ../sass/views/skills.scss */
+  #skills #photo-wrapper #myPhoto #mySign .message-board {
+    text-align: left;
   }
 }
-/* line 45, ../sass/views/skills.scss */
-#skills #message-wrapper .message-box {
-  margin: 0px 20px;
-  padding: 10px 15px;
-  background: rgba(255, 255, 255, 0.5);
-  border-radius: 10px;
+/* line 116, ../sass/views/skills.scss */
+#skills #photo-wrapper #myPhoto #mySign .message-board .message .quote {
+  width: 10px;
+  margin: 0px 5px;
 }
-@media (min-width: 480px) {
-  /* line 45, ../sass/views/skills.scss */
-  #skills #message-wrapper .message-box {
-    padding: 15px 20px;
-  }
-}
-@media (min-width: 768px) {
-  /* line 45, ../sass/views/skills.scss */
-  #skills #message-wrapper .message-box {
-    padding: 20px 30px;
-  }
-}
-/* line 56, ../sass/views/skills.scss */
-#skills #message-wrapper .message-box .quote {
-  width: 12px;
-  padding: 0px 5px;
-}
-/* line 60, ../sass/views/skills.scss */
-#skills #message-wrapper .message-box .defaultMessage {
-  vertical-align: middle;
-  line-height: 18px;
-}
-@media (min-width: 480px) {
-  /* line 60, ../sass/views/skills.scss */
-  #skills #message-wrapper .message-box .defaultMessage {
-    line-height: 22px;
-  }
-}
-/* line 68, ../sass/views/skills.scss */
-#skills #message-wrapper .focus {
-  font-size: 18px;
-  font-weight: 500;
-}
-@media (min-width: 480px) {
-  /* line 68, ../sass/views/skills.scss */
-  #skills #message-wrapper .focus {
-    font-size: 22px;
-  }
-}
-/* line 77, ../sass/views/skills.scss */
-#skills #board {
-  padding-bottom: 20px;
-  height: 240px;
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-  align-content: flex-end;
-}
-@media (min-width: 768px) {
-  /* line 77, ../sass/views/skills.scss */
-  #skills #board {
-    width: 90%;
-    margin: auto;
-  }
-}
-/* line 93, ../sass/views/skills.scss */
-#skills #board #surprise {
-  width: 100%;
-  align-self: flex-start;
-}
-/* line 97, ../sass/views/skills.scss */
-#skills #board .skill {
-  margin: 3px;
-  padding: 2px 6px;
-  font-family: "Armata", Arial, sans-serif;
-  font-size: 16px;
-  text-align: center;
-  border-radius: 5px;
-  background-color: black;
-}
-@media (min-width: 480px) {
-  /* line 97, ../sass/views/skills.scss */
-  #skills #board .skill {
-    font-size: 22px;
-  }
-}
-/* line 109, ../sass/views/skills.scss */
-#skills #board .lng {
+
+/* line 126, ../sass/views/skills.scss */
+.lng {
   color: #fdfe02;
 }
-@media (min-width: 480px) {
-  /* line 109, ../sass/views/skills.scss */
-  #skills #board .lng {
+@media (min-width: 768px) {
+  /* line 126, ../sass/views/skills.scss */
+  .lng {
     font-size: 26px;
   }
 }
-/* line 115, ../sass/views/skills.scss */
-#skills #board .frm {
+
+/* line 132, ../sass/views/skills.scss */
+.frm {
   color: #1ba1e2;
 }
-/* line 118, ../sass/views/skills.scss */
-#skills #board .frm2 {
+
+/* line 135, ../sass/views/skills.scss */
+.frm2 {
   color: #ff0097;
 }
-/* line 121, ../sass/views/skills.scss */
-#skills #board .db {
+
+/* line 138, ../sass/views/skills.scss */
+.db {
   color: #0bff01;
 }
-/* line 124, ../sass/views/skills.scss */
-#skills #board .other {
+
+/* line 141, ../sass/views/skills.scss */
+.other {
   color: #bb00ff;
 }
-/* line 127, ../sass/views/skills.scss */
-#skills #board .misc {
+
+/* line 144, ../sass/views/skills.scss */
+.misc {
   color: #999999;
 }
-@media (min-width: 480px) {
-  /* line 127, ../sass/views/skills.scss */
-  #skills #board .misc {
+@media (min-width: 768px) {
+  /* line 144, ../sass/views/skills.scss */
+  .misc {
     font-size: 18px;
   }
 }
 
-/* line 136, ../sass/views/skills.scss */
+/* line 267, ../sass/views/skills.scss */
 .shakeR {
   animation: shake 2s ease infinite;
 }
 
-/* line 139, ../sass/views/skills.scss */
+/* line 270, ../sass/views/skills.scss */
 .shakeL {
   animation: shake 1.5s ease-in-out infinite;
 }
