@@ -62,7 +62,7 @@
 					<p><span class="subtitle">Consecutive AJAX Requests on Array</span> Each word in the database is tracked with quiz records, whether a student answered the word in question correctly or not. A service method <code>WordBankService.updateWordRecord</code> returns a deferred promise, which is resolved or rejected depending on return value of an AJAX call it makes. Because several words need to be updated at once, they are passed to the service as an array, prompting the service to make consecutive AJAX calls. <code>$q.all</code> was used to make sure all requests are returned before calling the callback function.</p>
 				</div>
 				<div class="summary">
-					<p><span class="subtitle">Opening a Port</span> When the application was deployed to my server initially, no data was being returned from the database. The application was listenting to port 3000, the default value set by Express generator. It turned out that port 3000 was already in use by another application on my server. I opened another port and allowed inbound traffic to it on AWS.</p>
+					<p><span class="subtitle">Opening a Port</span> When the application was deployed to my server initially, no data was being returned from the database. The application was listening to port 3000, the default value set by Express generator. It turned out that port 3000 was already in use by another application on my server. I opened another port and allowed inbound traffic to it on AWS.</p>
 				</div>
 			</div>
 			<div class="toTop"><a href="#/#title"  du-smooth-scroll><img src="../compass/images/icon/top.png"></a></div>
