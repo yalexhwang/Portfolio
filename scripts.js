@@ -1,4 +1,4 @@
-var alxApp = angular.module('alxApp', ['ngRoute', 'duScroll']);
+var alxApp = angular.module('alxApp', ['ngRoute', 'duScroll', 'angular.backtop']);
 
 alxApp.controller('alxCtrl', function($scope) {
 

@@ -1,13 +1,15 @@
+
 <section id="projects">
+	<back-top button-text="TOP" scroll-speed="1000"></back-top>
 	<!-- Preview Boxes -->
 	<div id="preview-wrapper">
 		<div class="prj-preview" ng-repeat="prj in projectArr track by $index">
 			<div class="image" style="{{prj.backgroundOn}}" ng-mouseenter="hoverSwitchOn($index)" ng-mouseleave="hoverSwitchOff($index)" ng-class="{'imageOff': $index == selectedLink}">
 				<span class="link" ng-class="{'linkOn': $index == selectedLink}">
-					<a href="{{prj.liveLink}}" ng-class="(prj.liveLink == '') ? 'unavailable' : ''">click for<span class="destination">Live</span></a>
+					<a href="{{prj.liveLink}}" ng-class="(prj.liveLink == '') ? 'unavailable' : ''" target="_blank">click for<span class="destination">Live</span></a>
 				</span>
 				<span class="link" ng-class="{'linkOn': $index == selectedLink}">
-					<a href="{{prj.gitLink}}">click for<span class="destination">Git</span></a>
+					<a href="{{prj.gitLink}}" target="_blank">click for<span class="destination">Git</span></a>
 				</span>
 			</div>
 			<div class="title">
@@ -19,27 +21,30 @@
 
 	<!-- Project: Marti Study Room Ver.2-->
 	<div class="project" id="marti2">
-		<div class="project-thumbnail">
+<!-- 		<div class="project-thumbnail">
 			<img class="image" src="../compass/images/m1.png">
 			<img class="image" src="../compass/images/m2.png">
 			<img class="image" src="../compass/images/m3.png">
 			<img class="image" src="../compass/images/m4.png">
+		</div> -->
+		<div class="vid-wrapper">
+			<iframe src="https://www.youtube.com/embed/CSgIH1--ssM" frameborder="0" allowfullscreen></iframe>
 		</div>
 
 		<div class="project-info">
 			<div class="info-title">
-				Marti's Study Room 2
-				<span>Korean Vocaburary Study Web App</span>
+				Marti's Study Room
+				<span>Korean Vocabulary Study Web App</span>
 				<span>MVC Single Page Application</span>
 				<span>MEAN Stack</span>
 			</div>
 			<div class="linkbox">
-				<span class="inline-link"><a href="https://github.com/yalexhwang/marti-study-room"><img src="../compass/images/icon/link.png">Git</a></span>
-				<span class="inline-link"><a href="http://yalexhwang.com/marti-study-room"><img src="../compass/images/icon/link.png">Live</a></span>
+				<span class="inline-link"><a href="https://github.com/yalexhwang/marti-study-room" target="_blank"><img src="../compass/images/icon/link.png">Git</a></span>
+				<span class="inline-link"><a href="http://yalexhwang.com/marti-study-room" target="_blank"><img src="../compass/images/icon/link.png">Live</a></span>
 			</div>
 
 			<div class="info-detail">
-				<p>Marti's Study Room has been rebuilt from <a href="#marti" du-smooth-scroll>the original</a>, as a complete web application with a database connection. My student Marti can review vocabulary, manage the words in the database, or take a quiz. Result of a quiz is saved to the database in order to track her progress over time.</p>
+				<p>Marti's Study Room is a web application that I created to help a student I tutor with Korean vocabulary memorization. She wanted to get tested on her vocabulary on a regular basis. Instead of writing a quiz each session, I automated the process so that she can take the quiz whenever she wants. Quiz results are saved  to the database in order to track her progress over time. Also added is Word Bank, where the student can add or remove a word, which will be used for generating a quiz or populating vocabulary flash cards. </p>
 				
 				<h3>Technologies</h3>
 				<div class="info-tech">
@@ -48,7 +53,7 @@
 					<span class="tech-tag">Compass/Sass</span>
 					<span class="tech-tag">Bootstrap</span>
 					<span class="tech-tag">JavaScript</span>
-					<span class="tech-tag">Angular.js</span>
+					<span class="tech-tag">AngularJS</span>
 					<span class="tech-tag">Express.js</span>
 					<span class="tech-tag">Node.js</span>
 					<span class="tech-tag">MongoDB/Mongoose</span>
@@ -56,7 +61,10 @@
 
 				<h3>Notes</h3>
 				<div class="summary">
-					<p><span class="subtitle">Nested ngRepeat</span> A quiz is generated using ngRepeat on <code>$scope.quizList</code>, an array of objects, each of which represents a quiz question. Because a quiz question comes with multiple answer options, the object has a property <code>answerOptions</code>, which in turn is an array of objects. So, a ngRepeat directive is used to iterate over the array <code>$scope.quizList</code> to populate questions. Then, another ngRepeat, nested inside of the first ngRepeat, loops through the array of answer options that belongs to the quiz question object, populating answer options for the question. Because of rather complicated data structure, it was tricky to place the directives properly within DOM elements while keeping track of <code>$index</code> from both arrays.
+					<p><span class="subtitle">Foreign Language Characters</span> When I was working locally, Korean characters were broken, looking like a gibberish. When I served it up on Node.js, they started to display correctly. Researching why, I learned that there were different types of encoding, depending on the language's character sets. I understand why UTF-8, not ASCII, is now widely used. Node.js natively supports UTF-8 encoding, which was why Korean characters were displayed correctly once served up by Node.js. I also added <code>&lt;meta charset="UTF-8"&gt;</code> to make sure web browsers correctly encode my scripts.</p>
+				</div>
+				<div class="summary">
+					<p><span class="subtitle">Nested ngRepeat</span> A quiz is generated using ngRepeat on <code>$scope.quizList</code>, an array of objects, each of which represents a quiz question. Because a quiz question comes with multiple answer options, the object has a property <code>answerOptions</code>, which in turn is an array of objects. So, a ngRepeat directive is used to iterate over the array <code>$scope.quizList</code> to populate questions. Then, another ngRepeat, nested inside of the first ngRepeat, loops through the array of answer options that belongs to the quiz question object, populating answer options for the question. Because of the rather complicated data structure, it was tricky to place the directives properly within DOM elements while keeping track of <code>$index</code> from both arrays.
 				</div>
 				<div class="summary">
 					<p><span class="subtitle">Consecutive AJAX Requests on Array</span> Each word in the database is tracked with quiz records, whether a student answered the word in question correctly or not. A service method <code>WordBankService.updateWordRecord</code> returns a deferred promise, which is resolved or rejected depending on return value of an AJAX call it makes. Because several words need to be updated at once, they are passed to the service as an array, prompting the service to make consecutive AJAX calls. <code>$q.all</code> was used to make sure all requests are returned before calling the callback function.</p>
@@ -65,34 +73,35 @@
 					<p><span class="subtitle">Opening a Port</span> When the application was deployed to my server initially, no data was being returned from the database. The application was listening to port 3000, the default value set by Express generator. It turned out that port 3000 was already in use by another application on my server. I opened another port and allowed inbound traffic to it on AWS.</p>
 				</div>
 			</div>
-			<div class="toTop"><a href="#/#title"  du-smooth-scroll><img src="../compass/images/icon/top.png"></a></div>
 		</div>
 	</div>
 	<!-- END of Project -->
 
-	<!-- Project: Mini City Redesigned -->
+	<!-- Project: Mini City 2 -->
 	<div class="project" id="final">
-		<div class="project-thumbnail">
+		<!-- <div class="project-thumbnail">
 			<img class="image" src="../compass/images/final-1.png">
 			<img class="image" src="../compass/images/final-2.png">
 			<img class="image" src="../compass/images/final-3.png">
 			<img class="image" src="../compass/images/final-4.png">
+		</div> -->
+		<div class="vid-wrapper">
+			<iframe src="https://www.youtube.com/embed/z4rPAW134Aw" frameborder="0" allowfullscreen></iframe>
 		</div>
-
 		<div class="project-info">
 			<div class="info-title">
-				Mini City Redesigned
+				Mini City 2
 				<span> Mini City Prototype Redesgined with API </span>
 				<span> Python, MySQL and Angular</span>
 				<span> MVC Single Page Application </span>
 			</div>
 			<div class="linkbox">
-				<span class="inline-link"><a href="https://github.com/yalexhwang/final_project"><img src="../compass/images/icon/link.png">Git</a></span>
-				<span class="inline-link"><a href="../APIdoc.pdf"><img src="../compass/images/icon/link.png">API Doc</a></span>
+				<span class="inline-link"><a href="https://github.com/yalexhwang/final_project" target="_blank"><img src="../compass/images/icon/link.png">Git</a></span>
+				<span class="inline-link"><a href="../APIdoc.pdf" target="_blank"><img src="../compass/images/icon/link.png">API Doc</a></span>
 			</div>
 
 			<div class="info-detail">
-				<p>As my final project at DigitalCrafts, I redesigned <a href="#mini" du-smooth-scroll>the prototype</a> I built for Mini City at <a href="http://goodienation.org/events/atlanta/goodie-hack/goodie-hack-ecdev-atlanta-x-october-2016/">Goodie Nation Hackathon</a>. I wanted to restructure it to have an API and have Admin Portal to interact with the database using the API, in attempt to increase scalability and to have an option of having some data open to public in the future.<br/>
+				<p>For my final project at <a herf="http://www.digitalcrafts.com/immersive-web.html" target="_blank">DigitalCrafts</a>, I redesigned <a href="#mini" du-smooth-scroll>the prototype</a> I built for Mini City at <a href="http://goodienation.org/events/atlanta/goodie-hack/goodie-hack-ecdev-atlanta-x-october-2016/" target="_blank">Goodie Nation Hackathon</a>. I wanted to restructure it to have an API and have Admin Portal to interact with the database using the API, in attempt to increase scalability and to have an option of having some data open to public in the future.<br/>
 				In Admin Portal, you can access current data including users, NFC devices, events, and containers. You can register a new user, add a new event, or edit/delete an existing user or event.
 				</p>
 
@@ -103,7 +112,7 @@
 					<span class="tech-tag">Compass/Sass</span>
 					<span class="tech-tag">Bootstrap/UI Bootstrap</span>
 					<span class="tech-tag">JavaScript</span>
-					<span class="tech-tag">Angular.js</span>
+					<span class="tech-tag">AngularJS</span>
 					<span class="tech-tag">Python</span>
 					<span class="tech-tag">Flask</span>
 					<span class="tech-tag">MySQL</span>
@@ -117,7 +126,7 @@
 					<p><span class="subtitle">Endpoint Design: Nouns and Verbs </span> Instead of using verbs in endpoints, I learned that it is desirable to use nouns to represent resources and have the HTTP method as what to do (verbs), for more flexibility and better organization. It seems that the way endpoints are designed are closely intertwined with the way data is structured. It was interesting to me as it means you want to work with the entire data as a system and an API as a set of patterns to navigate the system. Although my API was simple, I very much enjoyed reading about APIs and building one on my own. I would like to keep learning about API design. <br/></p>
 				</div>
 				<div class="summary">
-					<p><span class="subtitle">UI Router</span> Instead of using ngRoute module of Angular.js, I used UI Router to create a more dynamic single page application that has nested views. As I was learning how to work with <code>$stateProvider</code> of UI Router, I could see the differences between UI Router and Angular router, and when UI Router will be more appropriate to use. <br/></p>
+					<p><span class="subtitle">UI Router</span> Instead of using ngRoute module of AngularJS, I used UI Router to create a more dynamic single page application that has nested views. As I was learning how to work with <code>$stateProvider</code> of UI Router, I could see the differences between UI Router and Angular router, and when UI Router will be more appropriate to use. <br/></p>
 				</div>
 				<div class="summary">
 					<p><span class="subtitle">Image Upload</span> There are many ways to save an image, but I wanted to try encoding the image and save it as a blob directly into the database, using HTML5's File Reader object. I could quickly see why it was not a common practice to save it in a database because the size of the blob for a rather small image (less than 2MB) was too large to be easily handled in a browser. <br/></p>
@@ -130,8 +139,7 @@
 				<div class="summary">
 					<p><span class="subtitle">Authentication Layer</span> Use an API key for authentication. <br/>
 				</div>	
-			</div>
-			<div class="toTop"><a href="#/#title" du-smooth-scroll><img src="../compass/images/icon/top.png"></a></div>
+			</div>s
 		</div>
 	</div>
 	<!-- END of Project -->
@@ -151,10 +159,10 @@
 				<span>Python and MySQL</span>
 			</div>
 			<div class="linkbox">
-				<span class="inline-link"><a href="https://github.com/yalexhwang/mini_city"><img src="../compass/images/icon/link.png">Git</a></span>
+				<span class="inline-link"><a href="https://github.com/yalexhwang/mini_city" target="_blank"><img src="../compass/images/icon/link.png">Git</a></span>
 			</div>
 			<div class="info-detail">
-				<p>My team won first place of the General category at <a href="http://goodienation.org/events/atlanta/goodie-hack/goodie-hack-ecdev-atlanta-x-october-2016/">Goodie Nation Hackathon</a>. I built a prototype for Mini City, an organization that serves the homeless population of Atlanta. Mini City wanted to uitlize Near Field Communication (NFC) tag based wearable devices to provide service while collecting and tracking live data. <br/>
+				<p>My team won first place of the General category at <a href="http://goodienation.org/events/atlanta/goodie-hack/goodie-hack-ecdev-atlanta-x-october-2016/">Goodie Nation Hackathon</a>. I built a prototype for Mini City, an organization that serves the homeless population of Atlanta. Mini City wanted to utilize Near Field Communication (NFC) tags, by giving out a wristband with a NFC tag inside to homeless people they serve. In that way, whenever a registered member comes in for a service, a Mini City staff can easily check the person in by scanning the wristband with an Android device. It allows Mini City to collect and track live data for their services.<br/>
 				<span class="note">Note: the prototpye has been redesigned as <a href="#final" du-smooth-scroll>my final project</a> at DigitalCrafts</span></p>
 				
 				<h3>Technologies</h3>
@@ -180,20 +188,21 @@
 					<p><span class="subtitle">Working with real-life clients</span> Working with Mini City gave me a glimpse of what it is like to work with real-life clients. Figuring out their needs and turning them into feasible technological concepts and developmental process was challenging, but nonetheless enjoyable. This experience has expanded my understanding of web development beyond mere technical aspects. It was an invaluable practice to address clients’ business needs and to come up with a feasible solution both from the technical and business perspectives.</p>
 				</div>
 			</div>
-			<div class="toTop"><a href="#/#title" du-smooth-scroll><img src="../compass/images/icon/top.png"></a></div>
 		</div>
 	</div>
 	<!-- END of Project -->
 
 	<!-- Project: HydroSource -->
 	<div class="project" id="hydro">
-		<div class="project-thumbnail">
+<!-- 		<div class="project-thumbnail">
 			<img class="image" src="../compass/images/hydrosource1.png">
 			<img class="image" src="../compass/images/hydrosource2.png">
 			<img class="image" src="../compass/images/hydrosource3.png">
 			<img class="image" src="../compass/images/hydrosource4.png">
+		</div> -->
+		<div class="vid-wrapper">
+			<iframe src="https://www.youtube.com/embed/excP9ged1D0" frameborder="0" allowfullscreen></iframe>
 		</div>
-
 		<div class="project-info">
 			<div class="info-title">
 				HydroSource
@@ -202,12 +211,12 @@
 				<span>MEAN stack</span>
 			</div>
 			<div class="linkbox">
-				<span class="inline-link"><a href="https://github.com/yalexhwang/e-commerce"><img src="../compass/images/icon/link.png">Git</a></span>
-				<span class="inline-link"><a href="http://yalexhwang.com/hydrosource/#/"><img src="../compass/images/icon/link.png">Live</a></span>
+				<span class="inline-link"><a href="https://github.com/yalexhwang/e-commerce" target="_blank"><img src="../compass/images/icon/link.png">Git</a></span>
+				<span class="inline-link"><a href="http://yalexhwang.com/hydrosource/#/" target="_blank"><img src="../compass/images/icon/link.png">Live</a></span>
 			</div>
 
 			<div class="info-detail">
-				<p>HydroSource is an eCommerce website for a (fake) water subscription service. A unique feature is Water Intake Calculator, which takes a user's body weight and hydration level of choice, and calculates the ideal amount of daily water intake. Based on the daily intake and delivery frequency of choice, total water supply for each delivery is determined. It is displayed in Store and Cart on a progress bar, to aid a user's shopping experience.</p>
+				<p>HydroSource is an eCommerce website for a (fake) water subscription service. A unique feature is the Water Intake Calculator, which takes a user's body weight and hydration level of choice, and calculates the ideal amount of daily water intake. Based on the user's daily intake and delivery frequency of choice, total water supply for each delivery is determined. It is displayed in Store and Cart on a progress bar, to aid a user's shopping experience.</p>
 				
 				<h3>Technologies</h3>
 				<div class="info-tech">
@@ -216,7 +225,7 @@
 					<span class="tech-tag">Compass/Sass</span>
 					<span class="tech-tag">Bootstrap/UI Bootstrap</span>
 					<span class="tech-tag">JavaScript</span>
-					<span class="tech-tag">Angular.js</span>
+					<span class="tech-tag">AngularJS</span>
 					<span class="tech-tag">Node.js</span>
 					<span class="tech-tag">Express.js</span>
 					<span class="tech-tag">MongoDB/Mongoose</span>
@@ -224,7 +233,7 @@
 
 				<h3>Notes</h3>
 				<div class="summary">
-					<p><span class="subtitle">bcrypt (npm)</span> I used a Node.js library to hash a password before saving it in the database.I learned the basic concept of bcrypt, how to read a shadow password (prefix for bcrypt hash, cost parameter, salt and hash). <br/></p>
+					<p><span class="subtitle">bcrypt (npm)</span> I used a Node.js library to hash a password before saving it in the database. I learned the basic concept of bcrypt, how to read a shadow password (prefix for bcrypt hash, cost parameter, salt and hash). <br/></p>
 				</div>
 				<div class="summary">
 					<p><span class="subtitle">rand-token (npm)</span> Another Node.js library I used. A random token is generated when a user signs in, and is removed at sign out.<br/></p>
@@ -236,7 +245,7 @@
 					<p><span class="subtitle">Stripe (API)</span>Stripe is an online payment software platform. I used Stripe's Node.js library to process payment.</p>
 				</div>	
 				<div class="summary">
-					<p><span class="subtitle">Use of ng-show/ng-hide in navigation menu items</span>It was an architectural problem in using Angular router. I used ng-show/ng-hide to display or hide menu items depending on sign in/out status. The problem was that they were evaluated only once at the initial page load. To solve the problem, I added a run block <code>.run()</code> with <code>$rootScope.$on</code>. A global variable <code>$rootScope.loggedIn</code> was used to indicate sign in/out status and <code>$locationChangeStart</code> to monitor route change.</p>
+					<p><span class="subtitle">Use of ng-show/ng-hide in navigation menu items</span>This was an architectural problem in using Angular router. I used ng-show/ng-hide to display or hide menu items depending on sign in/out status. The problem was that they were evaluated only once at the initial page load. To solve the problem, I added a run block <code>.run()</code> with <code>$rootScope.$on</code>. A global variable <code>$rootScope.loggedIn</code> was used to indicate sign in/out status and <code>$locationChangeStart</code> to monitor route change.</p>
 				</div>
 
 				<h3>Ideas for Future Implementation</h3>
@@ -245,51 +254,6 @@
 					<span class="subtitle">Token Expiration</span> Detect a user's inactivity and remove the token to sign out the user </p>
 				</div>	
 			</div>
-			<div class="toTop"><a href="#/#title" du-smooth-scroll><img src="../compass/images/icon/top.png"></a></div>
-		</div>
-	</div>
-	<!-- END of Project -->
-
-	<!-- Project: Marti Study Room Ver.1 -->
-	<div class="project" id="marti">
-		<div class="project-thumbnail">
-			<img class="image" src="../compass/images/sc1.png">
-			<img class="image" src="../compass/images/sc2.png">
-			<img class="image" src="../compass/images/sc3.png">
-		</div>
-
-		<div class="project-info">
-			<div class="info-title">
-				Marti's Study Room
-				<span>Korean Vocaburary Study Web App</span>
-				<span>MVP: Front-end Only</span>
-			</div>
-			<div class="linkbox">
-				<span class="inline-link"><a href="https://github.com/yalexhwang/Marti-vocab-study"><img src="../compass/images/icon/link.png">Git</a></span>
-				<span class="inline-link"><a href="http://yalexhwang.com/marti_study_room/#/"><img src="../compass/images/icon/link.png">Live</a></span>
-			</div>
-
-			<div class="info-detail">
-				<p>Marti's Study Room is the MVP of a web application that I created for a student I tutor. She wants to get tested on her vocabulary on a regular basis. Instead of writing a quiz each session, I wanted to automate the process so that she can take the quiz whenever she wants. <span class="note">A <a href="#marti2" du-smooth-scroll>new version</a> of the application with a database connetion has ben built.</span></p>
-				
-				<h3>Technologies</h3>
-				<div class="info-tech">
-					<span class="tech-tag">HTML5</span>
-					<span class="tech-tag">CSS</span>
-					<span class="tech-tag">Bootstrap</span>
-					<span class="tech-tag">JavaScript</span>
-					<span class="tech-tag">Angular.js</span>
-				</div>
-
-				<h3>Notes</h3>
-				<div class="summary">
-					<p><span class="subtitle">Foreign Language Characters</span> When I was working locally, Korean characters were broken, looking like a gibberish. When I served it up on Node.js, they started to display correctly. Researching why, I learned that there were different types of encoding, depending on the language's character sets. I understand why UTF-8, not ASCII, is now widely used. Node.js natively supports UTF-8 encoding, which was why Korean characters were displayed correctly once served up by Node.js. I also added <code>&lt;meta charset="UTF-8"&gt;</code> to make sure web browsers correctly encode my scripts.</p>
-				</div>
-				<div class="summary">
-					<p><span class="subtitle">Logic for generating quiz problems and answer options</span> It was more complicated than I initially thought to write a program that randomly selects a word and pairs it with the answer options, only one of which is the correct answer, and track each one of them. It was when I did not know how to use a database; I simply had a <code>.json</code> file that contained vocabulary as an object. I ended up using multiple arrays to temporarily store different groups of words (e.g., problems, correct answer options, incorrect answer options). I am planning to connect to a database with a schema, which will help simplify the process of generating quiz questions.</p>
-				</div>
-			</div>
-			<div class="toTop"><a href="#/#title"  du-smooth-scroll><img src="../compass/images/icon/top.png"></a></div>
 		</div>
 	</div>
 	<!-- END of Project -->

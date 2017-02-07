@@ -1,7 +1,7 @@
 alxApp.controller('projectsCtrl', function($scope) {
 	$scope.projectArr = [];
 	var prj5 = {
-		title: "Marti's Study Room 2",
+		title: "Marti's Study Room",
 		backgroundOn: "background-image: url('../compass/images/m1.png')",
 		backgroundOff: 'background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)), url("../compass/images/m1.png");',
 		liveLink: "http://yalexhwang.com/marti-study-room/#/",
@@ -9,7 +9,7 @@ alxApp.controller('projectsCtrl', function($scope) {
 		scrollTag: "#marti2"
 	};
 	var prj4 = {
-		title: "Mini City Redesigned",
+		title: "Mini City 2",
 		backgroundOn: "background-image: url('../compass/images/final-1.png')",
 		backgroundOff: 'background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)), url("../compass/images/final-1.png");',
 		liveLink: "",
@@ -32,15 +32,7 @@ alxApp.controller('projectsCtrl', function($scope) {
 		gitLink: "https://github.com/yalexhwang/e-commerce",
 		scrollTag: "#hydro"
 	};
-	var prj1 = {
-		title: "Marti's Study Room",
-		backgroundOn: "background-image: url('../compass/images/sc1.png')",
-		backgroundOff: 'background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)), url("../compass/images/sc1.png");',
-		liveLink: "http://yalexhwang.com/marti-study-room",
-		gitLink: "https://github.com/yalexhwang/marti-study-room",
-		scrollTag: "#marti"
-	};
-	$scope.projectArr.push(prj5, prj4, prj3, prj2, prj1);
+	$scope.projectArr.push(prj5, prj4, prj3, prj2);
 
 	$scope.hoverSwitchOn = function(index) {
 		$scope.initial = $scope.projectArr[index].backgroundOn;
